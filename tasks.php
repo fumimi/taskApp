@@ -3,7 +3,7 @@
 header("Content-Type: text/html; charset=UTF-8");
 
 define('DB_DATABASE', 'tasks');
-define('DB_USERNAME', 'tasks_user');
+define('DB_USERNAME', 'taskuset');
 define('DB_PASSWORD', 'n4Nvq5SL');
 define('PDO_DSN', 'mysql:dbhost=localhost;dbname=' . DB_DATABASE);
 
@@ -11,8 +11,6 @@ try {
   // connect
   $db = new PDO(PDO_DSN, DB_USERNAME, DB_PASSWORD);
   if ($db == null){ print('接続に失敗しました。'); }else{ print('接続に成功しました。'); }
-
-
 } catch (PDOException $e) {
   echo $e->getMessage();
   exit;
@@ -24,35 +22,8 @@ try {
 if(isset($_POST["insert"])){
 
   $insertId = $_POST["insertId"];
-  $insertTask = $_POST["insertTask"];
-  $insertClient_name = $_POST["insertClient_name"];
-  $insert = $_POST["insert"];
-  $insert = $_POST["insert"];
-  $insert = $_POST["insert"];
-  $insert = $_POST["insert"];
-  $insert = $_POST["insert"];
-  $insert = $_POST["insert"];
-  $insert = $_POST["insert"];
-  $insert = $_POST["insert"];
-  $insert = $_POST["insert"];
 
-
-
-
-
-
-  staff_name
-  requested_date
-  up_date
-  finished_date
-  pages
-  estimate
-  progress
-  content
-
-
-
-  $query = "INSERT INTO task (item, price) VALUES (:iItem, :iPrice)";
+  $query = "INSERT INTO task (id, price) VALUES (:iItem, :iPrice)";
 
   $stmt = $db->prepare($query);
   $stmt->bindParam(":iItem", $iItem);
@@ -62,35 +33,15 @@ if(isset($_POST["insert"])){
 }
 
 
-//delete method-------------------------
-if(isset($_POST["delete"])) {
-
-  $deleteId = $_POST["deleteId"];
-
-  $query = "DELETE FROM task where id = :dId";
-
-  $stmt = $db->prepare($query);
-  $stmt->bindParam(":dId", $dId);
-  $stmt->execute();
-
-}
-
-//-------------------------
-
-
-
-
-
-
-
 
 ?>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ja">
 
 <head>
 
   <?php include_once("dist/ssi/meta.html"); ?>
+  <link>
 
   <style>
   .block {
