@@ -3,13 +3,13 @@
 // エラー出力する場合
 ini_set( 'display_errors', 1 );
 
-
 require 'Calendar.php';
 
-
+// function h($s) {
+//   return htmlspecialchars($s, ENT_QUOTES, 'UTF-8');
+// }
 
 $cal = new \MyApp\Calendar();
-
 
 // ユーザーの一覧
 
