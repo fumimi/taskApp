@@ -5,9 +5,9 @@ ini_set( 'display_errors', 1 );
 
 require 'Calendar.php';
 
-// function h($s) {
-//   return htmlspecialchars($s, ENT_QUOTES, 'UTF-8');
-// }
+function h($s) {
+  return htmlspecialchars($s, ENT_QUOTES, 'UTF-8');
+}
 
 $cal = new \MyApp\Calendar();
 
@@ -61,9 +61,9 @@ $cal = new \MyApp\Calendar();
                       <table width="100%">
                         <thead>
                           <tr>
-                            <th><a href="/scheduler.php?t=<?php echo h($cal->prev); ?>">&laquo;</a></th>
+                            <th><a href="/taskapp/scheduler.php?t=<?php echo h($cal->prev); ?>">&laquo;</a></th>
                             <th colspan="5"><?php echo h($cal->yearMonth); ?></th>
-                            <th><a href="/scheduler.php?t=<?php echo h($cal->next); ?>">&raquo;</a></th>
+                            <th><a href="/taskapp/scheduler.php?t=<?php echo h($cal->next); ?>">&raquo;</a></th>
                           </tr>
                         </thead>
                         <tbody>
@@ -80,7 +80,7 @@ $cal = new \MyApp\Calendar();
                         </tbody>
                         <tfoot>
                           <tr>
-                            <th colspan="7"><a href="/scheduler.php">Today</a></th>
+                            <th colspan="7"><a href="/taskapp/scheduler.php">Today</a></th>
                           </tr>
                         </tfoot>
                       </table>
