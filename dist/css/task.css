@@ -1,0 +1,12 @@
+.block {
+  display: block;
+}
+input[type=date] {
+  width: 80px;
+  margin-right: 10px;
+  margin-left: 10px;
+  display: inline;
+}
+.table > tbody > tr > td, .table > tbody > tr > th, .table > tfoot > tr > td, .table > tfoot > tr > th, .table > thead > tr > td, .table > thead > tr > th {
+  vertical-align: middle;
+}

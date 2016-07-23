@@ -16,12 +16,15 @@ try {
   exit;
 }
 
-
-
 //insert
 if(isset($_POST["insert"])){
 
   $task_name = $_POST["task_name"];
+    if($task_name == null){
+      echo "入力して下さい。";
+    } else {
+      $query = "INSERT INTO problems (problem_number, problem_title, problem_detail) VALUES (:insert_problem_number, :insert_problem_title, :insert_problem_detail)";
+    }
 
   $query = "INSERT INTO task (id, task_name) VALUES (:id, :task_name)";
 
@@ -32,8 +35,6 @@ if(isset($_POST["insert"])){
 
 }
 
-
-
 ?>
 <!DOCTYPE html>
 <html lang="ja">
@@ -41,22 +42,8 @@ if(isset($_POST["insert"])){
 <head>
 
   <?php include_once("dist/ssi/meta.html"); ?>
-  <link>
+  <link href="/taskapp/dist/css/task.css" rel="stylesheet">
 
-  <style>
-  .block {
-    display: block;
-  }
-  input[type=date] {
-    width: 80px;
-    margin-right: 10px;
-    margin-left: 10px;
-    display: inline;
-  }
-  .table > tbody > tr > td, .table > tbody > tr > th, .table > tfoot > tr > td, .table > tfoot > tr > th, .table > thead > tr > td, .table > thead > tr > th {
-    vertical-align: middle;
-  }
-  </style>
 </head>
 
 <body class="drawer drawer--right">
