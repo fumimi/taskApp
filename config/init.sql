@@ -11,4 +11,9 @@ create table task (
 
 desc task;
 
-select * from users;
+select * from task;
+
+taskテーブルのレコードを削除
+delete from task;
+
+drop table task;
