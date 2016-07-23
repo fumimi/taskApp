@@ -18,16 +18,16 @@ try {
 
 
 
-//insert method-------------------------
+//insert
 if(isset($_POST["insert"])){
 
-  $insertId = $_POST["insertId"];
+  $task_name = $_POST["task_name"];
 
-  $query = "INSERT INTO task (id, price) VALUES (:iItem, :iPrice)";
+  $query = "INSERT INTO task (id, task_name) VALUES (:id, :task_name)";
 
   $stmt = $db->prepare($query);
-  $stmt->bindParam(":iItem", $iItem);
-  $stmt->bindParam(":iPrice", $iPrice);
+  $stmt->bindParam(":id", $id);
+  $stmt->bindParam(":task_name", $task_name);
   $stmt->execute();
 
 }
@@ -98,71 +98,23 @@ if(isset($_POST["insert"])){
                                 Taskを入力してください。
                             </div>
                             <div class="panel-body">
-                              <form role="form">
-                                <div class="row">
-                                    <div class="col-lg-6">
+                              <div class="col-lg-12">
+                                  <form role="form" action="tasks.php" method="post">
+                                    <!-- <input type="hidden" name="edit_id" value="<?=$id?>"> -->
                                       <div class="form-group">
-                                          <label>タスク名（orメールの件名）</label>
-                                          <input class="form-control" name="task">
-                                          <!-- <p class="help-block">Example block-level help text here.</p> -->
+                                          <label>タスク</label>
+                                          <input class="form-control" name="task_name">
                                       </div>
-                                      <div class="form-group">
-                                          <label>クライアント名</label>
-                                          <input class="form-control" name="client_name">
-                                          <!-- <p class="help-block">Example block-level help text here.</p> -->
-                                      </div>
-                                      <div class="form-group">
-                                          <label>スタッフ名</label>
-                                          <input class="form-control" name="staff_name">
-                                          <!-- <p class="help-block">Example block-level help text here.</p> -->
-                                      </div>
-                                      <div class="form-group">
-                                          <label class="block">依頼日</label>
-                                          <input class="form-control" type="date" name="requested_date">/<input class="form-control" type="date">/<input class="form-control" type="date">
-                                          <!-- <p class="help-block">Example block-level help text here.</p> -->
-                                      </div>
-                                      <div class="form-group">
-                                          <label class="block">アップ希望日</label>
-                                          <input class="form-control" type="date" name="up_date">/<input class="form-control" type="date">/<input class="form-control" type="date">
-                                          <!-- <p class="help-block">Example block-level help text here.</p> -->
-                                      </div>
-                                      <div class="form-group">
-                                          <label class="block">完了日</label>
-                                          <input class="form-control" type="date" name="finished_date">/<input class="form-control" type="date">/<input class="form-control" type="date">
-                                          <!-- <p class="help-block">Example block-level help text here.</p> -->
-                                      </div>
-                                      <div class="form-group">
-                                          <label>作業ページ数</label>
-                                          <input class="form-control" name="pages">
-                                          <!-- <p class="help-block">Example block-level help text here.</p> -->
-                                      </div>
-                                      <div class="form-group">
-                                          <label>見積</label>
-                                          <input class="form-control" name="estimate">
-                                          <!-- <p class="help-block">Example block-level help text here.</p> -->
-                                      </div>
-                                      <div class="form-group">
-                                          <label>進捗</label>
-                                          <select class="form-control" name="progress">
-                                              <option>未開始</option>
-                                              <option>進行中</option>
-                                              <option>完了</option>
-                                              <option>待機中</option>
-                                              <option>遅延</option>
-                                          </select>
-                                      </div>
-                                    </div>
-                                    <!-- /.col-lg-6 (nested) -->
-                                    <div class="col-lg-6">
-                                      <div class="form-group">
-                                          <label>内容</label>
-                                          <textarea class="form-control" rows="22" name="content"></textarea>
-                                      </div>
-                                    </div>
-                                    <!-- /.col-lg-6 (nested) -->
-                                </div>
-                                <!-- /.row (nested) -->
-                              </form>
+                                      <p><?php
+                                      if(isset($_POST["edit"])) {
+                                        echo "<button type=\"submit\" class=\"btn btn-primary btn-lg btn-block\" name=\"edit_result\">編集</button>";
+                                      } else {
+                                        echo "<button type=\"submit\" class=\"btn btn-primary btn-lg btn-block\" name=\"insert\">登録</button>";
+                                      }
+                                      ?></p>
+                                  </form>
+                              </div>
+                              <!-- /.col-lg-12 (nested) -->
                             </div>
                             <!-- /.panel-body -->
                         </div>
@@ -184,69 +136,40 @@ if(isset($_POST["insert"])){
                                             <tr>
                                               <th>&nbsp;</th>
                                               <th>タスクID</th>
-                                              <th>タスク（orメールの件名）</th>
-                                              <th>クライアント名</th>
-                                              <th>スタッフ名</th>
-                                              <th>依頼日</th>
-                                              <th>アップ希望日</th>
-                                              <th>完了日</th>
-                                              <th>作業ページ数</th>
-                                              <th>見積</th>
-                                              <th>進捗</th>
-                                              <th>内容</th>
+                                              <th>タスク</th>
                                             </tr>
                                         </thead>
-                                        <!-- <tbody>
-
+                                        <tbody>
 
                                           <?php
 
-                                          // $data = $db->query("select * from task");
-                                          //
-                                          // while($items = $data->fetch()){
-                                          //   $id = $items["id"];
-                                          //   $task = $items["task"];
-                                          //   $client_name = $items["client_name"];
-                                          //   $staff_name = $items["staff_name"];
-                                          //   $requested_date = $items["requested_date"];
-                                          //   $up_date = $items["up_date"];
-                                          //   $finished_date = $items["finished_date"];
-                                          //   $pages = $items["pages"];
-                                          //   $estimate = $items["estimate"];
-                                          //   $progress = $items["progress"];
-                                          //   $content = $items["content"];
-                                          //
-                                          //   echo "<tr>
-                                          //     <td>
-                                          //       <div class=\"form-group\">
-                                          //           <label class=\"checkbox-inline\"><input type=\"checkbox\"></label>
-                                          //       </div>
-                                          //     </td>
-                                          //     <td>{$id}</td>
-                                          //     <td>{$task}</td>
-                                          //     <td>{$client_name}</td>
-                                          //     <td>{$staff_name}</td>
-                                          //     <td>{$requested_date}</td>
-                                          //     <td>{$up_date}</td>
-                                          //     <td>{$finished_date}</td>
-                                          //     <td>{$pages}</td>
-                                          //     <td>{$estimate}</td>
-                                          //     <td>{$progress}</td>
-                                          //     <td>{$content}</td>
-                                          //   </tr>";
-                                          //
-                                          // }
-                                          // echo "</table><input type=\"submit\" name=\"delete\" value=\"削除\"></form>";
-                                          //
-                                          // // db close
-                                          // $db = null;
+                                          $data = $db->query("select * from task");
+
+                                          while($items = $data->fetch()){
+                                            $id = $items["id"];
+                                            $task_name = $items["task_name"];
+
+                                            echo "<tr>
+                                              <td>
+                                                <div class=\"form-group\">
+                                                    <label class=\"checkbox-inline\"><input type=\"checkbox\"></label>
+                                                </div>
+                                              </td>
+                                              <td>{$id}</td>
+                                              <td>{$task_name}</td>
+                                            </tr>";
+
+                                          }
+
+                                          // db close
+                                          $db = null;
 
                                           ?>
 
-                                        </tbody> -->
+                                        </tbody>
                                     </table>
                                     <p>
-                                      <button type="button" class="btn btn-default"><a href="edit.php">修正</a></button>
+                                      <button type="button" class="btn btn-default">修正</button>
                                       <button type="button" class="btn btn-default">完了</button>
                                       <button type="button" class="btn btn-default">削除</button>
                                     </p>
