@@ -1,0 +1,155 @@
+/*
+ * Copyright(c) 2009 limitlink,Inc. All Rights Reserved.
+ * http://limitlink.jp/
+ * 文字コードUTF-8
+ */
+
+.control {
+	clear: both;
+	padding: 0px 0px 0px 20px;
+	border-bottom: 1px solid #666;
+}
+
+.control table {
+	position: relative;
+	top: 1px;
+}
+
+.control a:link, .control a:visited, .control a:active {
+	display: block;
+	margin-right: 2px;
+	padding: 4px 8px 2px 8px;
+	color: #333;
+	font-size: 12px;
+	white-space: nowrap;
+	border-top: 1px solid #999;
+	border-left: 1px solid #999;
+	border-right: 1px solid #999;
+}
+
+.control a:hover {
+	color: #29f;
+	border-top: 1px solid #666;
+	border-left: 1px solid #666;
+	border-right: 1px solid #666;
+}
+
+.control .current a:link, .control .current a:visited, .control .current a:active {
+	color: #29f;
+	font-weight: bold;
+	background-color: #fff;
+	border-top: 1px solid #666;
+	border-left: 1px solid #666;
+	border-right: 1px solid #666;
+}
+
+.contentcontrol {
+	margin-bottom: 10px;
+	border-bottom: 1px solid #57d;
+}
+
+.contentcontrol h1 {
+	float: left;
+	margin: 0px;
+	border-bottom: 0px;
+}
+
+.contentcontrol table {
+	float: right;
+	position: relative;
+	top: 1px;
+}
+
+.contentcontrol a:link, .contentcontrol a:visited, .contentcontrol a:active {
+	display: block;
+	margin-right: 2px;
+	padding: 4px 5px 1px 5px;
+	color: #57d;
+	font-size: 14px;
+	white-space: nowrap;
+	background-color: #eff7ff;
+	border: 1px solid #57d;
+}
+
+.contentcontrol a.current:link, .contentcontrol a.current:visited, .contentcontrol a.current:active {
+	color: #000;
+	background-color: #fff;
+	border-bottom: 1px solid #fff;
+}
+
+.operate {
+	height: 18px;
+	clear: both;
+	float: left;
+	padding-bottom: 10px;
+}
+
+.operate li {
+	float: left;
+	margin-right: 10px;
+}
+
+.operate a:link, .operate a:visited, .operate a:active, .operate .operator {
+	display: block;
+	padding-left: 20px;
+	background-image: url(../images/operate.gif);
+	background-repeat: no-repeat;
+}
+
+.contentfolder {
+	width: 172px;
+	padding-right: 30px;
+}
+
+.folder {
+	width: 170px;
+	border: 1px solid #8be;
+}
+
+.foldercaption {
+	padding: 3px 5px 2px 5px;
+	white-space: nowrap;
+	background-color: #eff7ff;
+	background-image: url(../images/foldercaption.gif);
+	background-repeat: repeat-x;
+	border-bottom: 1px solid #8be;
+}
+
+.folder ul {
+	padding: 5px;
+}
+
+.folder li {
+	padding: 2px 5px 2px 5px;
+	white-space: normal;
+}
+
+.folderlist li {
+	padding: 2px 5px 2px 20px;
+	background-image: url(../images/folder.gif);
+	background-repeat: no-repeat;
+}
+
+.folderlist li.current {
+	background-image: url(../images/folderopen.gif);
+	background-repeat: no-repeat;
+}
+
+.folder .current a:link, .folder .current a:visited, .folder .current a:active {
+	color: #000;
+	font-weight: bold;
+}
+
+.folderoperate {
+	padding: 0px 5px 2px 5px;
+	font-size: 12px;
+	text-align: right;
+}
+
+a.direction:link, a.direction:visited, a.direction:active {
+	font-size: 12px;
+}
+
+a.share:link, a.share:visited, a.share:active {
+	color: #060;
+}

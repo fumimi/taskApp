@@ -1,0 +1,302 @@
+/*
+ * Copyright(c) 2009 limitlink,Inc. All Rights Reserved.
+ * http://limitlink.jp/
+ * 文字コードUTF-8
+ */
+
+body {
+	margin: 0px;
+	padding: 0px;
+	line-height: 135%;
+	font-size: 14px;
+	font-family: "ＭＳ Ｐゴシック", Osaka, sans-serif;
+	min-width: 600px;
+	max-width: 1280px;
+}
+
+input, textarea, select {
+	font-size: 14px;
+	font-family: "ＭＳ Ｐゴシック", Osaka, sans-serif;
+}
+
+form, ul, ol, li, img {
+	margin: 0px;
+	padding: 0px;
+	border: 0px;
+}
+
+li {
+	list-style-type: none;
+	white-space: nowrap;
+}
+
+table {
+	border: 0px;
+}
+
+th {
+	padding: 0px;
+	font-weight: normal;
+	vertical-align: top;
+	white-space: nowrap;
+}
+
+td {
+	padding: 0px;
+	vertical-align: top;
+}
+
+p, .paragraph {
+	margin: 0px 0px 20px 0px;
+	padding: 0px;
+}
+
+a:link, a:visited, a:active {
+	color: #00f;
+	text-decoration: none;
+}
+
+a:hover {
+	color: #29f;
+	text-decoration: underline;
+}
+
+.operator {
+	color: #00f;
+	cursor: pointer;
+}
+
+.operator:hover {
+	color: #29f;
+	text-decoration: underline;
+}
+
+.clearer {
+	clear: both;
+	font-size: 0px;
+}
+
+.header {
+	border-top: 5px solid #57d;
+}
+
+.headertitle {
+	float: left;
+	padding: 10px 0px 8px 20px;
+}
+
+.headerright {
+	text-align: right;
+	padding: 10px 20px 10px 0px;
+}
+
+.headerright a:link, .headerright a:visited, .headerright a:active {
+	margin-left: 10px;
+	color: #333;
+	font-size: 12px;
+}
+
+.headerright a:hover .headerright a.current:link, .headerright a.current:visited, .headerright a.current:active {
+	color: #09e;
+}
+
+.footer {
+	padding: 0px 40px 0px 40px;
+	font-size: 12px;
+}
+
+.container {
+	clear: both;
+	padding: 40px 40px 40px 40px;
+}
+
+.content {
+	width: 100%;
+	clear: both;
+}
+
+.wrapper {
+	width: 100%;
+}
+
+h1 {
+	margin: 0px 0px 10px 0px;
+	padding: 0px 0px 5px 0px;
+	color: #333;
+	font-size: 16px;
+	font-weight: bold;
+	border-bottom: 1px solid #57d;
+}
+
+h2 {
+	margin: 0px;
+	padding: 10px 0px 5px 0px;
+	font-size: 16px;
+	font-weight: bold;
+}
+
+.searchform {
+	float: right;
+	padding-bottom: 10px;
+}
+
+.error {
+	padding-bottom: 5px;
+	color: #f00;
+}
+
+.list {
+	width: 100%;
+	clear: both;
+	border-top: 1px solid #999;
+	border-left: 1px solid #999;
+	border-right: 1px solid #999;
+}
+
+.list th {
+	padding: 3px 5px 3px 10px;
+	text-align: left;
+	background-color: #f2f2f2;
+	background-image: url(../images/listheader.gif);
+	background-repeat: repeat-x;
+	border-bottom: 1px solid #999;
+}
+
+.list td {
+	padding: 3px 5px 3px 10px;
+	border-bottom: 1px solid #999;
+}
+
+.list th a:link, .list th a:visited, .list th a:active {
+	color: #333;
+}
+
+th.listcheck, td.listcheck {
+	width: 20px;
+	padding: 3px 0px 3px 3px;
+}
+
+th.listlink, td.listlink {
+	width: 40px;
+	padding: 3px 5px 3px 5px;
+	white-space: nowrap;
+}
+
+.visited td a:visited {
+	color: #606;
+}
+
+.sortby {
+	padding-left: 5px;
+	font-size: 12px;
+}
+
+.pagination {
+	padding: 10px 0px 10px 0px;
+}
+
+.separator {
+	padding: 0px 5px 0px 5px;
+}
+
+.unlink {
+	color: #bbb;
+}
+
+.right, th.right {
+	text-align: right;
+}
+
+.view {
+	width: 700px;
+	clear: both;
+	border-top: 1px solid #999;
+	border-left: 1px solid #999;
+}
+
+.view th {
+	width: 120px;
+	padding: 3px 5px 3px 5px;
+	text-align: left;
+	background-color: #f7f7f7;
+	border-right: 1px solid #999;
+	border-bottom: 1px solid #999;
+}
+
+.view td {
+	padding: 3px 5px 3px 5px;
+	border-right: 1px solid #999;
+	border-bottom: 1px solid #999;
+}
+
+.property {
+	padding-top: 20px;
+}
+
+.form {
+	clear: both;
+}
+
+.form th {
+	width: 120px;
+	padding: 3px 0px 3px 0px;
+	text-align: left;
+}
+
+.form td {
+	padding: 3px 0px 3px 0px;
+}
+
+.formlist {
+	clear: both;
+	vertical-align: middle;
+}
+
+.formlist th {
+	padding: 3px 10px 3px 0px;
+	text-align: left;
+}
+
+.formlist td {
+	padding: 3px 10px 3px 0px;
+}
+
+.submit {
+	padding: 10px 0px 5px 0px;
+}
+
+.necessary {
+	margin-left: 5px;
+	color: #f00;
+	font-size: 10px;
+}
+
+.inputnumeric {
+	width: 70px;
+}
+
+.inputalpha {
+	width: 150px;
+}
+
+.inputvalue {
+	width: 300px;
+}
+
+.inputtitle, .inputcomment, .inputfile {
+	width: 500px;
+}
+
+.inputsearch {
+	width: 220px;
+}
+
+.die {
+	width: 400px;
+	clear: both;
+	margin: 100px auto 100px auto;
+	padding: 40px;
+	color: #f00;
+	background-color:#fdd;
+	border: 1px solid #f00;
+}

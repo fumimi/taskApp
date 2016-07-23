@@ -1,0 +1,196 @@
+/*
+ * Copyright(c) 2009 limitlink,Inc. All Rights Reserved.
+ * http://limitlink.jp/
+ * 文字コードUTF-8
+ */
+
+.login {
+	width: 300px;
+	margin: 100px auto 100px auto;
+	padding: 40px;
+	border: 1px solid #999;
+}
+
+.login h1 {
+	margin-bottom: 20px;
+}
+
+.logininput {
+	width: 180px;
+}
+
+.loginsubmit {
+	padding-top: 20px;
+	text-align: center;
+}
+
+.login .error {
+	padding-bottom: 5px;
+}
+
+.login th, .login td {
+	padding: 3px;
+	text-align: left;
+}
+
+.attachment li {
+	float: left;
+	margin: 10px 10px 0px 0px;
+	text-align: center;
+	line-height: 100%;
+}
+
+.layerwrapper {
+	width: 500px;
+	position: absolute;
+	visibility: hidden;
+	background-color: #fff;
+	border-right: 1px solid #ddd;
+	border-bottom: 1px solid #ddd;
+}
+
+.layer {
+	border: 1px solid #666;
+}
+
+.handle {
+	width: 100%;
+	background-color: #57d;
+	background-image: url(../images/handle.gif);
+	background-repeat: repeat-x;
+	border-bottom: 1px solid #666;
+}
+
+.layercaption {
+	float: left;
+	padding: 3px 5px 2px 5px;
+	color: #fff;
+}
+
+.layerclose {
+	width: 14px;
+	height: 13px;
+	float: right;
+	margin: 5px;
+	background-image: url(../images/close.gif);
+	background-repeat: no-repeat;
+}
+
+.layercontent {
+	padding: 20px;
+}
+
+.layer th, .layer td {
+	width: auto;
+	padding: 3px 5px 3px 5px;
+}
+
+.layerlist {
+	border: 1px solid #8be;
+}
+
+.layerlistcaption {
+	padding: 3px 5px 2px 5px;
+	white-space: nowrap;
+	background-color: #eff7ff;
+	border-bottom: 1px solid #8be;
+}
+
+.layerlist ul {
+	padding: 5px;
+}
+
+.layerlist li {
+	padding: 2px 5px 2px 5px;
+}
+
+.layerlistsubmit {
+	padding: 0px 5px 5px 5px;
+}
+
+.explain {
+	margin-left: 5px;
+	vertical-align: text-bottom;
+	cursor: pointer;
+}
+
+.explanation {
+	width: 360px;
+	display: none;
+	position: absolute;
+	padding: 20px 20px 10px 20px;
+	color: #333;
+	white-space: normal;
+	background-color: #ffd;
+	border: 1px solid #f90;
+}
+
+.explanation table {
+	margin-top: 10px;
+}
+
+.explanation th {
+	width: auto;
+	padding: 0px 10px 5px 0px;
+	font-weight: bold;
+}
+
+.explanation td {
+	padding: 0px 10px 5px 0px;
+}
+
+.explanationclose {
+	padding-top: 10px;
+	font-size: 12px;
+	text-align: center;
+}
+
+.explanationclose span {
+	color: #666;
+}
+
+.itemlink {
+	width: 400px;
+	clear: both;
+}
+
+.itemlink a:link, .itemlink a:visited, .itemlink a:active {
+	display: block;
+	margin-bottom: 10px;
+	padding: 15px;
+	color: #333;
+	font-size: 16px;
+	border: 1px solid #57d;
+}
+
+.itemlink a:hover {
+	text-decoration: none;
+	background-color: #eff7ff;
+}
+
+.itemlink img {
+	margin-right: 5px;
+	vertical-align: top;
+}
+
+.setup {
+	margin: 20px 40px 20px 40px;
+	padding: 40px;
+	border: 1px solid #999;
+}
+
+.setup h1 {
+	margin-bottom: 20px;
+}
+
+.setup h2 {
+	margin: 0px;
+	padding: 5px 0px 5px 0px;
+	color: #08d;
+	font-size: 16px;
+}
+
+.setupdescription {
+	padding-bottom: 10px;
+	color: #080;
+}

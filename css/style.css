@@ -1,0 +1,429 @@
+/*
+ * Copyright(c) 2009 limitlink,Inc. All Rights Reserved.
+ * http://limitlink.jp/
+ * 文字コードUTF-8
+ */
+
+.topcaption {
+	padding: 3px 5px 3px 5px;
+	background-color: #eff7ff;
+	background-image: url(../images/foldercaption.gif);
+	background-repeat: repeat-x;
+	border-bottom: solid 1px #57d;
+}
+
+.topcaption h2 {
+	float: left;
+	padding: 0px;
+	color: #36c;
+	font-size: 14px;
+	font-weight: bold;
+}
+
+.topcaption h2 a:link, .topcaption h2 a:visited, .topcaption h2 a:active {
+	color: #36c;
+}
+
+.topcaption ul {
+	float: right;
+}
+
+.topcaption li {
+	float: left;
+	margin-left: 10px;
+}
+
+.topcaption li a:link, .topcaption li a:visited, .topcaption li a:active, .topcaption li .operator {
+	display: block;
+	padding-left: 20px;
+	background-image: url(../images/operate.gif);
+	background-repeat: no-repeat;
+}
+
+.toplist {
+	margin-bottom: 20px;
+	border: 1px solid #57d;
+}
+
+.toplist table {
+	padding: 2px 0px 2px 0px;
+}
+
+.toplist td {
+	padding: 2px 5px 2px 5px;
+}
+
+table.toptimecard {
+	width: 100%;
+	padding: 0px;
+}
+
+.toptimecard th {
+	padding: 2px 5px 2px 5px;
+	background-color: #f2f2f2;
+	background-image: url(../images/listheader.gif);
+	background-repeat: repeat-x;
+	border-bottom: solid 1px #999;
+	border-right: solid 1px #999;
+}
+
+.toptimecard td {
+	padding: 2px 5px 2px 5px;
+	text-align: center;
+	vertical-align: middle;
+	border-right: solid 1px #999;
+}
+
+.topcontentfolder {
+	width: 40%;
+	padding-right: 30px;
+}
+
+.scheduleheader {
+	width: 30%;
+}
+
+.schedulecaption {
+	width: 40%;
+	font-size: 16px;
+	text-align: center;
+	white-space: nowrap;
+}
+
+.scheduleheaderright {
+	width: 30%;
+	text-align: right;
+}
+
+.scheduleheaderright .contentcontrol {
+	margin: 0px 0px 0px auto;
+}
+
+.schedulenavigation {
+	padding: 5px 0px 5px 0px;
+	text-align: center;
+}
+
+.schedulearrow {
+	vertical-align: top;
+}
+
+table.schedule {
+	width: 100%;
+	border-top: solid 1px #999;
+	border-left: solid 1px #999;
+}
+
+table.schedule th {
+	width: 14.3%;
+	border-right: solid 1px #999;
+	border-bottom: solid 1px #999;
+}
+
+table.schedule td {
+	width: 14.3%;
+	height: 70px;
+	padding: 3px;
+	vertical-align: top;
+	border-right: solid 1px #999;
+	border-bottom: solid 1px #999;
+}
+
+table.schedulegroup {
+	width: 100%;
+	border-top: solid 1px #999;
+	border-left: solid 1px #999;
+}
+
+table.schedulegroup th {
+	width: 12%;
+	padding-left:3px;
+	padding-right:3px;
+	border-right: solid 1px #999;
+	border-bottom: solid 1px #999;
+}
+
+table.schedulegroup td {
+	width: 12%;
+	height: 70px;
+	padding: 3px;
+	vertical-align: top;
+	border-right: solid 1px #999;
+	border-bottom: solid 1px #999;
+}
+
+.today {
+	background-color: #ffffaa;
+}
+
+.saturday {
+	background-color: #eff7ff;
+}
+
+.sunday {
+	background-color: #fdd;
+}
+
+.timetable {
+	width: 100%;
+	table-layout: fixed;
+	border: 1px solid #999;
+}
+
+.timetable th {
+	text-align: left;
+	background-color: #f7f7f7;
+	border-right: 1px solid #999;
+	border-bottom: 1px solid #999;
+}
+
+.timetable td {
+	height: 40px;
+}
+
+.timetable a:link, .timetable a:visited, .timetable a:active {
+	display: block;
+	height: 100%;
+	overflow: hidden;
+	background-color: #eff7ff;
+	border: 1px solid #57d;
+}
+
+.timetable a:hover, .timetable a.current:link, .timetable a.current:visited, .timetable a.current:active {
+	background-color: #fdd;
+	border: 1px solid #f00;
+}
+
+.timetable a.share:link, .timetable a.share:visited, .timetable a.share:active {
+	color: #360;
+	background-color: #f6ffe4;
+	border: 1px solid #690;
+}
+
+.timetableempty {
+	text-align: center;
+	vertical-align: middle;
+}
+
+.timetable .private {
+	display: block;
+	height: 100%;
+	overflow: hidden;
+	background-color: #f7f7f7;
+	border: 1px solid #999;
+}
+
+.timetablegroup {
+	width: 100%;
+	border-top: 1px solid #999;
+	border-left: 1px solid #999;
+}
+
+.timetablegroupuser {
+	width: 100px;
+	padding: 3px;
+	border-right: 1px solid #999;
+	border-bottom: 1px solid #999;
+}
+
+.timetablegrouplist {
+	border-right: 1px solid #999;
+	border-bottom: 1px solid #999;
+}
+
+.timetablegroup .timetable {
+	border: 0px;
+}
+
+.forum {
+	width: 100%;
+	margin-bottom: 20px;
+	border: 1px solid #999;
+}
+
+.forumtitle {
+	padding: 5px 20px 5px 20px;
+	font-size: 16px;
+	background-color: #f7f7f7;
+	border-bottom: 1px solid #999;
+}
+
+.forumproperty {
+	padding: 5px 10px 5px 20px;
+}
+
+.forumproperty span {
+	margin-right: 10px;
+}
+
+.forumedit {
+	float: right;
+	padding: 5px 20px 5px 20px;
+	text-align: right;
+}
+
+.forumcontent {
+	clear: both;
+	padding: 10px 20px 10px 20px;
+	border-top: 1px solid #999;
+}
+
+.addressbooktype a:link, .addressbooktype a:visited, .addressbooktype a:active {
+	padding: 4px 15px 1px 15px;
+}
+
+td.messagecontent {
+	padding: 20px;
+}
+
+.storagefile {
+	padding: 1px 0px 2px 20px;
+	background-image: url(../images/file.gif);
+	background-repeat: no-repeat;
+}
+
+.storagefolder {
+	padding: 3px 0px 0px 20px;
+	background-image: url(../images/folder.gif);
+	background-repeat: no-repeat;
+}
+
+li.storageprevious {
+	background-image: url(../images/previous.gif);
+	background-repeat: no-repeat;
+}
+
+.projectcaption {
+	clear: both;
+	padding: 5px 5px 5px 5px;
+	font-size: 16px;
+	border-top: 1px solid #999;
+	border-left: 1px solid #999;
+	border-right: 1px solid #999;
+}
+
+.projecttask {
+	width: 100%;
+	table-layout: fixed;
+	border-top: 1px solid #999;
+	border-right: 1px solid #999;
+}
+
+.projecttask th {
+	text-align: left;
+	white-space: nowrap;
+	overflow: hidden;
+	background-color: #f7f7f7;
+	border-left: 1px solid #999;
+	border-bottom: 1px solid #999;
+}
+
+.projecttask td {
+	border-bottom: 1px solid #999;
+}
+
+.projecttask td a.task:link, .projecttask td a.task:visited, .projecttask td a.task:active {
+	display: block;
+	height: 100%;
+	white-space: nowrap;
+	overflow: hidden;
+	background-color: #eff7ff;
+	border: 1px solid #57d;
+}
+
+.projecttask td a.task:hover {
+	text-decoration: none;
+	background-color: #fdd;
+	border: 1px solid #f00;
+}
+
+.projectprogress {
+	display: block;
+	background-color: #57d;
+}
+
+th.projecttaskheader {
+	width: 200px;
+}
+
+.projecttaskcaption {
+	white-space: nowrap;
+	overflow: hidden;
+	padding: 1px 5px 1px 5px;
+	border-left: 1px solid #999;
+	border-right: 1px solid #999;
+}
+
+.projecttaskday {
+	border-right: 1px solid #999;
+	border-bottom: 1px solid #999;
+}
+
+.projecttaskseparator {
+	border-right: 1px solid #999;
+}
+
+.todocompleterow {
+	background-color: #fbfbfb;
+}
+
+.todocomplete {
+	color: #96c63f;
+	white-space: nowrap;
+}
+
+.todoincomplete {
+	color: #ff7f00;
+	white-space: nowrap;
+}
+
+.todoimportant {
+	color: #f00;
+	white-space: nowrap;
+}
+
+.todopriority {
+	color: #f00;
+	font-weight: bold;
+	white-space: nowrap;
+}
+
+.todouser, .todouser th, .todouser td {
+	padding: 0px 5px 0px 0px;
+	border: 0px;
+}
+
+.timecard {
+	clear: both;
+	border-top: 1px solid #999;
+	border-left: 1px solid #999;
+}
+
+.timecardcaption {
+	text-align: center;
+}
+
+.timecard th {
+	padding: 3px 5px 3px 5px;
+	text-align: left;
+	background-color: #f2f2f2;
+	background-image: url(../images/listheader.gif);
+	background-repeat: repeat-x;
+	border-right: 1px solid #999;
+	border-bottom: 1px solid #999;
+}
+
+.timecard td {
+	padding: 3px 5px 3px 5px;
+	vertical-align: middle;
+	border-right: 1px solid #999;
+	border-bottom: 1px solid #999;
+}
+
+.timecardupdated {
+	color: #f00;
+}
+
+.timecardtotal {
+	text-align: center;
+}
