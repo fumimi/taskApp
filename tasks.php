@@ -3,8 +3,8 @@
 header("Content-Type: text/html; charset=UTF-8");
 
 define('DB_DATABASE', 'tasks');
-define('DB_USERNAME', 'taskuset');
-define('DB_PASSWORD', 'n4Nvq5SL');
+define('DB_USERNAME', 'taskuser');
+define('DB_PASSWORD', '6w7murn7');
 define('PDO_DSN', 'mysql:dbhost=localhost;dbname=' . DB_DATABASE);
 
 try {

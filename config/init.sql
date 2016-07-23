@@ -1,17 +1,14 @@
-create database sns_php;
+create database tasks;
 
-grant all on sns_php.* to snsuser@localhost identified by '6w7murn7';
+grant all on tasks.* to taskuser@localhost identified by '6w7murn7';
 
-use sns_php
+use tasks;
 
-create table users (
+create table task (
   id int not null auto_increment primary key,
-  email varchar(255) unique,
-  password varchar(255),
-  created datetime,
-  modified datetime
+  task_name varchar(255)
 );
 
-desc users;
+desc task;
 
 select * from users;
