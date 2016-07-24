@@ -21,19 +21,14 @@ body {
 @media(min-width:768px) {
     #page-wrapper {
         position: inherit;
-        /*margin: 0 0 0 250px;*/
-        /*margin: 0 0 0 300px;*/
-        margin: 0;
-
+        margin: 0 0 0 250px;
         padding: 0 30px;
         border-left: 1px solid #e7e7e7;
     }
 }
 
 .navbar-top-links {
-    /*margin-right: 0;*/
-    margin-right: 30px;
-
+    margin-right: 0;
 }
 
 .navbar-top-links li {
@@ -136,8 +131,7 @@ body {
     .sidebar {
         z-index: 1;
         position: absolute;
-        /*width: 250px;*/
-        width: 300px;
+        width: 250px;
         margin-top: 51px;
     }
 

@@ -6,9 +6,9 @@
  */
 
 class Controller {
-	
+
 	function dispatch() {
-		
+
 		$this->requiring();
 		$authority = new Authority;
 		$authority->check();
@@ -17,7 +17,7 @@ class Controller {
 	}
 
 	function json() {
-		
+
 		$this->requiring();
 		$authority = new Authority;
 		$authorized = $authority->authorize();
@@ -28,9 +28,9 @@ class Controller {
 		}
 
 	}
-	
+
 	function execute() {
-		
+
 		if (!file_exists('application')) {
 			$directory = basename(dirname($_SERVER['SCRIPT_NAME']));
 		} else {
@@ -60,7 +60,7 @@ class Controller {
 	}
 
 	function requiring() {
-	
+
 		mb_internal_encoding('UTF-8');
 		require_once(dirname(__FILE__).'/config.php');
 		if (DB_STORAGE == 'mysql') {
@@ -93,7 +93,7 @@ class Controller {
 	}
 
 	function strip($data) {
-	
+
 		if (get_magic_quotes_gpc()) {
 			if (is_array($data)) {
 				return array_map(array($this, 'strip'), $data);
@@ -101,7 +101,7 @@ class Controller {
 				return stripslashes($data);
 			}
 		}
-		
+
 	}
 
 }

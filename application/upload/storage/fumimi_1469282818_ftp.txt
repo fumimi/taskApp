@@ -1,9 +1,0 @@
-《 契約サービスの接続情報 》
-
-     FTPサーバ名     ： fumimi-jp.sakura.ne.jp
-     FTPアカウント   ： fumimi-jp
-     FTP初期フォルダ ： www
-     サーバパスワード： aw9s6eyt83
-
-     POP3(受信)サーバ： fumimi-jp.sakura.ne.jp
-     SMTP(送信)サーバ： fumimi-jp.sakura.ne.jp

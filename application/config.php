@@ -50,13 +50,13 @@ define('DIR_UPLOAD', DIR_PATH.'upload/');
 //データベースの種類
 define('DB_STORAGE', 'mysql');
 //データベースのホスト名
-define('DB_HOSTNAME', 'localhost');
+define('DB_HOSTNAME', 'mysql426.db.sakura.ne.jp');
 //データベース名
-define('DB_DATABASE', 'groups');
+define('DB_DATABASE', 'fumimi-jp_taskapp');
 //データベースユーザー名
-define('DB_USERNAME', 'groupsuser');
+define('DB_USERNAME', 'fumimi-jp');
 //データベースパスワード
-define('DB_PASSWORD', '6w7murn7');
+define('DB_PASSWORD', 's5YGZJWx');
 //テーブル接頭辞
 define('DB_PREFIX', 'groupware_');
 //データベースポート番号

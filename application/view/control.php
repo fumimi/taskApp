@@ -4,14 +4,14 @@
  * http://limitlink.jp/
  * 文字コード UTF-8
  */
-if ($_SESSION['realname']) {
-	$realname = $this->escape($_SESSION['realname']).'さん';
-}
-if ($this->authorize('administrator', 'manager')) {
-	$administration = '<a'.$current['administration'].' href="'.$root.'administration.php">管理画面</a>';
-}
+// if ($_SESSION['realname']) {
+// 	$realname = $this->escape($_SESSION['realname']).'さん';
+// }
+// if ($this->authorize('administrator', 'manager')) {
+// 	$administration = '<a'.$current['administration'].' href="'.$root.'administration.php">管理画面</a>';
+// }
 ?>
-<div class="header">
+<!-- <div class="header">
 	<div class="headertitle">
 		<a href="<?=$root?>index.php"><img src="<?=$root?>images/title.gif" /></a>
 	</div>
@@ -35,4 +35,4 @@ if ($this->authorize('administrator', 'manager')) {
 		</tr></table>
 	</div>
 </div>
-<div class="container">
+<div class="container"> -->

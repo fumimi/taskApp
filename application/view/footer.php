@@ -7,5 +7,9 @@
 ?>
 </div>
 <div class="footer">Copyright(c) limitlink.jp All Rights Reserved. </div>
+
+</div>
+<?php include_once("dist/ssi/js.html"); ?>
+
 </body>
 </html>

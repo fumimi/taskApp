@@ -1,11 +1,10 @@
 <?php
 
+ini_set( 'display_errors', 1 );
+
 header("Content-Type: text/html; charset=UTF-8");
 
-define('DB_DATABASE', 'tasks');
-define('DB_USERNAME', 'taskuser');
-define('DB_PASSWORD', '6w7murn7');
-define('PDO_DSN', 'mysql:dbhost=localhost;dbname=' . DB_DATABASE);
+require_once('tasks2.php');
 
 try {
   // connect

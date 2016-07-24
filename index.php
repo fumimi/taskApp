@@ -5,6 +5,7 @@
  * 文字コード UTF-8
  */
 require_once('application/loader.php');
+
 $view->script('general.js');
 $view->heading('トップページ', 'top');
 $hash['group'] = array('グループ') + $hash['group'];
@@ -14,7 +15,10 @@ $next = mktime(0, 0, 0, $hash['month'], $hash['day'] + 7, $hash['year']);
 $week = array('日', '月', '火', '水', '木', '金', '土');
 $caption = $hash['year'].'年'.$hash['month'].'月'.$hash['day'].'日('.$week[$hash['weekday']].')';
 ?>
-<h1>トップページ</h1>
+
+<h1> Dashboard</h1>
+
+
 <table class="wrapper" cellspacing="0"><tr><td class="scheduleheader">
 	<ul class="operate">
 		<li><a href="schedule/add.php<?=$calendar->parameter($hash['year'], $hash['month'], $hash['day'], array('group'=>'', 'member'=>'', 'facility'=>''))?>">予定追加</a></li>
@@ -27,6 +31,10 @@ $caption = $hash['year'].'年'.$hash['month'].'月'.$hash['day'].'日('.$week[$h
 </td><td class="scheduleheaderright">
 	<?=$helper->selector('groupweek', $hash['group'], '', ' onchange="General.redirect(this,'.$hash['year'].','.$hash['month'].','.$hash['day'].')"')?>
 </td></tr></table>
+
+
+
+
 <table class="schedulegroup paragraph" cellspacing="0"><tr>
 <?php
 $timestamp = $hash['begin'];
@@ -57,6 +65,14 @@ for ($i = 0; $i <= 6; $i++) {
 }
 echo '</tr></table>';
 ?>
+
+
+
+
+
+
+
+
 <table class="wrapper" cellspacing="0"><tr><td class="topcontentfolder">
 	<form method="post" class="toplist" name="checkedform" action="">
 		<div class="topcaption">
@@ -89,6 +105,11 @@ if (is_array($hash['todo']) && count($hash['todo']) > 0) {
 }
 ?>
 		</table>
+
+
+
+
+		
 		<input type="hidden" name="folder" value="" />
 	</form>
 	<form method="post" class="toplist" action="">
@@ -210,6 +231,8 @@ if (is_array($hash['project']) && count($hash['project']) > 0) {
 }
 ?>
 </td></table>
+
+
 <?php
 $view->footing();
 ?>

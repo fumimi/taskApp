@@ -1,10 +1,12 @@
 <?php
 
+phpinfo();
+
 // エラー出力する場合
 ini_set( 'display_errors', 1 );
 
-require 'calendar.php';
-$cal = new \MyApp\Calendar();
+// require 'calendar.php';
+// $cal = new \MyApp\Calendar();
 
 // echo __DIR__;
 
