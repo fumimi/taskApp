@@ -28,7 +28,7 @@ require_once(DIR_VIEW.'header.php');
 
 
 
-										<form role="form" class="login" method="post" name="login" action="login.php">
+										<form role="form" class="" method="post" name="login" action="login.php">
 											<?=$view->error($error)?>
 												<fieldset>
 														<div class="form-group">

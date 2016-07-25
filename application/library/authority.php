@@ -6,16 +6,16 @@
  */
 
 class Authority {
-	
+
 	function Authority() {
-		
+
 		session_name(APP_TYPE.'sid');
 		session_start();
 
 	}
 
 	function check() {
-	
+
 		$authorized = $this->authorize();
 		if ($authorized !== true) {
 			if (basename($_SERVER['SCRIPT_NAME']) != 'login.php') {
@@ -31,7 +31,7 @@ class Authority {
 	}
 
 	function authorize() {
-	
+
 		$authorized = false;
 		if (isset($_SESSION['authorized'])) {
 			if ($_SESSION['authorized'] === md5(__FILE__.$_SESSION['logintime'])) {
@@ -54,7 +54,7 @@ class Authority {
 	}
 
 	function login() {
-	
+
 		$authorized = false;
 		$error = array();
 		if ($_SERVER['REQUEST_METHOD'] == 'POST') {
@@ -84,12 +84,13 @@ class Authority {
 				$error[] = 'ユーザー名を入力してください。';
 			}
 		} elseif (isset($_SESSION['status'])) {
-			if ($_SESSION['status'] == 'idle') {
-				$error[] = '自動的にログアウトしました。<br />ログインしなおしてください。';
-			} elseif ($_SESSION['status'] == 'expire') {
-				$error[] = 'ログインの有効期限が切れました。<br />ログインしなおしてください。';
-			}
-			session_unregister('status');
+			return false;
+			// if ($_SESSION['status'] == 'idle') {
+			// 	$error[] = '自動的にログアウトしました。<br />ログインしなおしてください。';
+			// } elseif ($_SESSION['status'] == 'expire') {
+			// 	$error[] = 'ログインの有効期限が切れました。<br />ログインしなおしてください。';
+			// }
+			// session_unregister('status');
 		}
 		if ($authorized === true && count($error) <= 0) {
 			session_regenerate_id();
@@ -125,7 +126,7 @@ class Authority {
 	}
 
 	function sessionDestroy() {
-	
+
 		$_SESSION = array();
 		if (isset($_COOKIE[session_name()])) {
 			setcookie(session_name(), '', time() - 42000, '/');

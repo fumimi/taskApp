@@ -35,7 +35,7 @@ define('APP_IDLE', '3600');
  */
 //アプリケーションディレクトリ
 define('DIR_PATH', dirname(__FILE__).'/');
-//モデルディレクトリ
+// Model Directory
 define('DIR_MODEL', DIR_PATH.'model/');
 //ビューディレクトリ
 define('DIR_VIEW', DIR_PATH.'view/');
