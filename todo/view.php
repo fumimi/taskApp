@@ -1,10 +1,15 @@
 <?php
-/*
- * Copyright(c) 2009 limitlink,Inc. All Rights Reserved.
- * http://limitlink.jp/
- * 文字コード UTF-8
- */
+/**
+
+* @link http://www.fumimi.jp/
+* @package taskApp
+* @subpackage taska
+* @since 0.0.4
+
+*/
+
 require_once('../application/loader.php');
+
 $view->heading('ToDo詳細');
 if (is_array($hash['folder']) && count($hash['folder']) > 0) {
 	foreach ($hash['folder'] as $key => $value) {
@@ -31,7 +36,16 @@ if (strlen($hash['data']['todo_term']) > 0) {
 	$hash['data']['todo_term'] = date('Y年n月j日', strtotime($hash['data']['todo_term']));
 }
 ?>
-<h1>ToDo詳細</h1>
+
+
+<div class="row">
+	<div class="col-lg-12">
+		<h1 class="page-header">Task</h1>
+	</div>
+</div>
+
+
+
 <ul class="operate">
 	<li><a href="index.php<?=$redirect?>">一覧に戻る</a></li>
 	<li><?=$complete?></li>
@@ -39,6 +53,9 @@ if (strlen($hash['data']['todo_term']) > 0) {
 	<li><a href="delete.php?id=<?=$hash['data']['id']?>">削除</a></li>
 	<li><select name="move" onchange="App.move(this)"><option value="">フォルダ移動</option><?=$option?><option value="0">フォルダなし</option></select></li>
 </ul>
+
+
+
 <table class="view" cellspacing="0">
 	<tr><th>ステータス</th><td><?=$status?>&nbsp;</td></tr>
 	<tr><th>タイトル</th><td><?=$hash['data']['todo_title']?>&nbsp;</td></tr>
