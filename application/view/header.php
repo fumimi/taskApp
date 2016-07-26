@@ -2,15 +2,14 @@
 /**
 
 * @link http://www.fumimi.jp/
-*
 * @package taskApp
 * @subpackage taska
-* @since 0.0.3
+* @since 0.0.4
 
 */
 ?>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ja">
 <head>
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
