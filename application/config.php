@@ -9,7 +9,7 @@
  * アプリケーション設定
  */
 //アプリケーション
-define('APP_TYPE', 'group');
+define('APP_TYPE', 'taskapp');
 
 /**
  * 制限設定
@@ -67,4 +67,13 @@ define('DB_CHARSET', 'utf8');
 define('DB_FILE', DIR_PATH.'database/group.sqlite2');
 //郵便番号データファイル
 define('DB_POSTCODE', DIR_PATH.'database/KEN_ALL.CSV');
+
+// Application version
+define('SINCE', '0.0.5');
+// Application name
+define('APP_NAME') or define('APP_NAME', 'Task App');
+// Application version
+defined('APP_VERSION') or define('APP_VERSION', '0.0.4');
+
+
 ?>

@@ -21,6 +21,7 @@
 <link href="<?=$root?>css/control.css" rel="stylesheet" type="text/css" />
 <link href="<?=$root?>css/application.css" rel="stylesheet" type="text/css" />
 <link href="<?=$root?>css/style.css" rel="stylesheet" type="text/css" />
+<link rel="shortcut icon" href="<?=$root?>favicon.ico" />
 <script type="text/javascript" src="<?=$root?>js/library/jquery.js"></script>
 <script type="text/javascript" src="<?=$root?>js/library/ui.core.js"></script>
 <script type="text/javascript" src="<?=$root?>js/library/ui.draggable.js"></script>

@@ -1,9 +1,5 @@
 <?php
-/*
- * Copyright(c) 2009 limitlink,Inc. All Rights Reserved.
- * http://limitlink.jp/
- * 文字コード UTF-8
- */
+
 // if ($_SESSION['realname']) {
 // 	$realname = $this->escape($_SESSION['realname']).'さん';
 // }
@@ -57,7 +53,7 @@
               <span class="icon-bar"></span>
               <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="<?=$root?>index.php">Task App - ver. 0.0.4</a>
+          <a class="navbar-brand" href="<?=$root?>index.php"><?php echo APP_NAME ?> - ver <?php echo SINCE ?></a>
       </div>
       <!-- /.navbar-header -->
 
