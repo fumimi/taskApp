@@ -100,7 +100,7 @@
           <ul class="dropdown-menu dropdown-tasks">
             <li><a href="#">
               <div>
-                <p><strong>Task 1</strong><span class="pull-right text-muted">40% Complete</span></p>
+                <p><strong>Project 1</strong><span class="pull-right text-muted">40% Complete</span></p>
                 <div class="progress progress-striped active">
                   <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width: 40%"><span class="sr-only">40% Complete (success)</span></div>
                 </div>
@@ -109,7 +109,7 @@
             <li class="divider"></li>
             <li><a href="#">
               <div>
-                <p><strong>Task 2</strong><span class="pull-right text-muted">20% Complete</span></p>
+                <p><strong>Project 2</strong><span class="pull-right text-muted">20% Complete</span></p>
                 <div class="progress progress-striped active">
                   <div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100" style="width: 20%"><span class="sr-only">20% Complete</span></div>
                 </div>
@@ -118,7 +118,7 @@
             <li class="divider"></li>
             <li><a href="#">
               <div>
-                <p><strong>Task 3</strong><span class="pull-right text-muted">60% Complete</span></p>
+                <p><strong>Project 3</strong><span class="pull-right text-muted">60% Complete</span></p>
                 <div class="progress progress-striped active">
                   <div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%"><span class="sr-only">60% Complete (warning)</span></div>
                 </div>
@@ -127,7 +127,7 @@
             <li class="divider"></li>
             <li><a href="#">
               <div>
-                <p><strong>Task 4</strong><span class="pull-right text-muted">80% Complete</span></p>
+                <p><strong>Project 4</strong><span class="pull-right text-muted">80% Complete</span></p>
                 <div class="progress progress-striped active">
                   <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" style="width: 80%"><span class="sr-only">80% Complete (danger)</span></div>
                 </div>
@@ -203,7 +203,7 @@
                   <li><a href="<?=$root?>index.php"><i class="fa fa-dashboard fa-fw"></i> Dashboard</a></li>
                   <li><a href="<?=$root?>schedule/"><i class="fa fa-calendar fa-fw"></i> Schedule</a></li>
                   <li><a href="<?=$root?>message/"><i class="fa fa-envelope-o fa-fw"></i> Message</a></li>
-                  <li><a href="<?=$root?>todo/"><i class="fa fa-check-square-o fa-fw"></i> ToDo</a></li>
+                  <li><a href="<?=$root?>todo/"><i class="fa fa-check-square-o fa-fw"></i> Task</a></li>
                   <li><a href="<?=$root?>forum/"><i class="fa fa-comments fa-fw"></i> Comments</a></li>
                   <li><a href="<?=$root?>storage/"><i class="fa fa-file-text-o fa-fw"></i> Storage</a></li>
                   <li><a href="<?=$root?>bookmark/"><i class="fa fa-bookmark fa-fw"></i> Bookmark</a></li>

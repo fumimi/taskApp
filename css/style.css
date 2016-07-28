@@ -63,15 +63,15 @@ table.toptimecard {
 	background-color: #f2f2f2;
 	background-image: url(../images/listheader.gif);
 	background-repeat: repeat-x;
-	border-bottom: solid 1px #999;
-	border-right: solid 1px #999;
+	border-bottom: solid 1px #ddd;
+	border-right: solid 1px #ddd;
 }
 
 .toptimecard td {
 	padding: 2px 5px 2px 5px;
 	text-align: center;
 	vertical-align: middle;
-	border-right: solid 1px #999;
+	border-right: solid 1px #ddd;
 }
 
 .topcontentfolder {
@@ -110,14 +110,14 @@ table.toptimecard {
 
 table.schedule {
 	width: 100%;
-	border-top: solid 1px #999;
-	border-left: solid 1px #999;
+	border-top: solid 1px #ddd;
+	border-left: solid 1px #ddd;
 }
 
 table.schedule th {
 	width: 14.3%;
-	border-right: solid 1px #999;
-	border-bottom: solid 1px #999;
+	border-right: solid 1px #ddd;
+	border-bottom: solid 1px #ddd;
 }
 
 table.schedule td {
@@ -125,22 +125,22 @@ table.schedule td {
 	height: 70px;
 	padding: 3px;
 	vertical-align: top;
-	border-right: solid 1px #999;
-	border-bottom: solid 1px #999;
+	border-right: solid 1px #ddd;
+	border-bottom: solid 1px #ddd;
 }
 
 table.schedulegroup {
 	width: 100%;
-	border-top: solid 1px #999;
-	border-left: solid 1px #999;
+	border-top: solid 1px #ddd;
+	border-left: solid 1px #ddd;
 }
 
 table.schedulegroup th {
 	width: 12%;
 	padding-left:3px;
 	padding-right:3px;
-	border-right: solid 1px #999;
-	border-bottom: solid 1px #999;
+	border-right: solid 1px #ddd;
+	border-bottom: solid 1px #ddd;
 }
 
 table.schedulegroup td {
@@ -148,8 +148,8 @@ table.schedulegroup td {
 	height: 70px;
 	padding: 3px;
 	vertical-align: top;
-	border-right: solid 1px #999;
-	border-bottom: solid 1px #999;
+	border-right: solid 1px #ddd;
+	border-bottom: solid 1px #ddd;
 }
 
 .today {
@@ -167,14 +167,14 @@ table.schedulegroup td {
 .timetable {
 	width: 100%;
 	table-layout: fixed;
-	border: 1px solid #999;
+	border: 1px solid #ddd;
 }
 
 .timetable th {
 	text-align: left;
 	background-color: #f7f7f7;
-	border-right: 1px solid #999;
-	border-bottom: 1px solid #999;
+	border-right: 1px solid #ddd;
+	border-bottom: 1px solid #ddd;
 }
 
 .timetable td {
@@ -210,25 +210,25 @@ table.schedulegroup td {
 	height: 100%;
 	overflow: hidden;
 	background-color: #f7f7f7;
-	border: 1px solid #999;
+	border: 1px solid #ddd;
 }
 
 .timetablegroup {
 	width: 100%;
-	border-top: 1px solid #999;
-	border-left: 1px solid #999;
+	border-top: 1px solid #ddd;
+	border-left: 1px solid #ddd;
 }
 
 .timetablegroupuser {
 	width: 100px;
 	padding: 3px;
-	border-right: 1px solid #999;
-	border-bottom: 1px solid #999;
+	border-right: 1px solid #ddd;
+	border-bottom: 1px solid #ddd;
 }
 
 .timetablegrouplist {
-	border-right: 1px solid #999;
-	border-bottom: 1px solid #999;
+	border-right: 1px solid #ddd;
+	border-bottom: 1px solid #ddd;
 }
 
 .timetablegroup .timetable {
@@ -238,14 +238,14 @@ table.schedulegroup td {
 .forum {
 	width: 100%;
 	margin-bottom: 20px;
-	border: 1px solid #999;
+	border: 1px solid #ddd;
 }
 
 .forumtitle {
 	padding: 5px 20px 5px 20px;
 	font-size: 16px;
 	background-color: #f7f7f7;
-	border-bottom: 1px solid #999;
+	border-bottom: 1px solid #ddd;
 }
 
 .forumproperty {
@@ -265,7 +265,7 @@ table.schedulegroup td {
 .forumcontent {
 	clear: both;
 	padding: 10px 20px 10px 20px;
-	border-top: 1px solid #999;
+	border-top: 1px solid #ddd;
 }
 
 .addressbooktype a:link, .addressbooktype a:visited, .addressbooktype a:active {
@@ -297,16 +297,16 @@ li.storageprevious {
 	clear: both;
 	padding: 5px 5px 5px 5px;
 	font-size: 16px;
-	border-top: 1px solid #999;
-	border-left: 1px solid #999;
-	border-right: 1px solid #999;
+	border-top: 1px solid #ddd;
+	border-left: 1px solid #ddd;
+	border-right: 1px solid #ddd;
 }
 
 .projecttask {
 	width: 100%;
 	table-layout: fixed;
-	border-top: 1px solid #999;
-	border-right: 1px solid #999;
+	border-top: 1px solid #ddd;
+	border-right: 1px solid #ddd;
 }
 
 .projecttask th {
@@ -314,12 +314,12 @@ li.storageprevious {
 	white-space: nowrap;
 	overflow: hidden;
 	background-color: #f7f7f7;
-	border-left: 1px solid #999;
-	border-bottom: 1px solid #999;
+	border-left: 1px solid #ddd;
+	border-bottom: 1px solid #ddd;
 }
 
 .projecttask td {
-	border-bottom: 1px solid #999;
+	border-bottom: 1px solid #ddd;
 }
 
 .projecttask td a.task:link, .projecttask td a.task:visited, .projecttask td a.task:active {
@@ -350,17 +350,17 @@ th.projecttaskheader {
 	white-space: nowrap;
 	overflow: hidden;
 	padding: 1px 5px 1px 5px;
-	border-left: 1px solid #999;
-	border-right: 1px solid #999;
+	border-left: 1px solid #ddd;
+	border-right: 1px solid #ddd;
 }
 
 .projecttaskday {
-	border-right: 1px solid #999;
-	border-bottom: 1px solid #999;
+	border-right: 1px solid #ddd;
+	border-bottom: 1px solid #ddd;
 }
 
 .projecttaskseparator {
-	border-right: 1px solid #999;
+	border-right: 1px solid #ddd;
 }
 
 .todocompleterow {
@@ -372,10 +372,6 @@ th.projecttaskheader {
 	white-space: nowrap;
 }
 
-.todoincomplete {
-	color: #ff7f00;
-	white-space: nowrap;
-}
 
 .todoimportant {
 	color: #f00;
@@ -395,8 +391,8 @@ th.projecttaskheader {
 
 .timecard {
 	clear: both;
-	border-top: 1px solid #999;
-	border-left: 1px solid #999;
+	border-top: 1px solid #ddd;
+	border-left: 1px solid #ddd;
 }
 
 .timecardcaption {
@@ -409,15 +405,15 @@ th.projecttaskheader {
 	background-color: #f2f2f2;
 	background-image: url(../images/listheader.gif);
 	background-repeat: repeat-x;
-	border-right: 1px solid #999;
-	border-bottom: 1px solid #999;
+	border-right: 1px solid #ddd;
+	border-bottom: 1px solid #ddd;
 }
 
 .timecard td {
 	padding: 3px 5px 3px 5px;
 	vertical-align: middle;
-	border-right: 1px solid #999;
-	border-bottom: 1px solid #999;
+	border-right: 1px solid #ddd;
+	border-bottom: 1px solid #ddd;
 }
 
 .timecardupdated {
@@ -426,4 +422,44 @@ th.projecttaskheader {
 
 .timecardtotal {
 	text-align: center;
+}
+
+
+
+
+
+@media screen and (max-width: 480px) {
+	table.schedulegroup {
+		width: auto;
+		display: block;
+		border-top: solid 1px #ddd;
+		border-left: solid 1px #ddd;
+	}
+	table.schedulegroup tbody {
+		width: auto;
+		display: block;
+	}
+	table.schedulegroup tbody tr {
+		width: auto;
+		display: block;
+	}
+
+	table.schedulegroup th {
+		width: auto;
+		display: block;
+		padding-left:3px;
+		padding-right:3px;
+		border-right: solid 1px #ddd;
+		border-bottom: solid 1px #ddd;
+	}
+
+	table.schedulegroup td {
+		width: auto;
+		display: block;
+		height: 70px;
+		padding: 3px;
+		vertical-align: top;
+		border-right: solid 1px #ddd;
+		border-bottom: solid 1px #ddd;
+	}
 }

@@ -69,11 +69,11 @@ define('DB_FILE', DIR_PATH.'database/group.sqlite2');
 define('DB_POSTCODE', DIR_PATH.'database/KEN_ALL.CSV');
 
 // Application version
-define('SINCE', '0.0.5');
+define('SINCE', '0.0.6');
 // Application name
 define('APP_NAME') or define('APP_NAME', 'Task App');
 // Application version
-defined('APP_VERSION') or define('APP_VERSION', '0.0.4');
+defined('APP_VERSION') or define('APP_VERSION', '0.0.6');
 
 
 ?>

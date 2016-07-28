@@ -86,10 +86,18 @@ class View {
 			$onchange = sprintf(' onchange="App.limit(\'%s\',\'%s\')"', $sort, $desc);
 		}
 ?>
-		<div class="pagination">
-			<?=$pagination->create($count)?>&nbsp;
-			表示件数:<?=$pagination->limit($onchange)?>
-		</div>
+
+
+
+<nav aria-label="Page navigation">
+	<ul class="pagination">
+		<?=$pagination->create($count)?>&nbsp;
+		表示件数:<?=$pagination->limit($onchange)?>
+
+	</ul>
+</nav>
+
+
 <?php
 
 	}

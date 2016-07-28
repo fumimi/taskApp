@@ -1,10 +1,7 @@
 <?php
-/*
- * Copyright(c) 2009 limitlink,Inc. All Rights Reserved.
- * http://limitlink.jp/
- * 文字コード UTF-8
- */
+
 require_once('../application/loader.php');
+
 $view->heading('ToDo削除');
 $priority = array('', '<span class="todoimportant">重要</span>', '<span class="todopriority">最重要</span>');
 if ($hash['data']['todo_complete'] == 1) {
@@ -30,29 +27,80 @@ if (strlen($hash['data']['todo_user']) > 0) {
 	$string = $view->permitlist($hash['data'], 'todo');
 }
 ?>
-<h1>ToDo削除</h1>
+
+
+<div class="row">
+	<div class="col-lg-12">
+		<h1 class="page-header">ToDo削除</h1>
+	</div>
+</div>
+
+
+
 <ul class="operate">
 	<li><a href="index.php<?=$redirect?>">一覧に戻る</a></li>
 </ul>
-<form class="content" method="post" action="">
-	<?=$view->error($hash['error'], '下記のToDoを削除します。')?>
-	<table class="view" cellspacing="0">
-		<tr><th>ステータス</th><td><?=$status?>&nbsp;</td></tr>
-		<tr><th>タイトル</th><td><?=$hash['data']['todo_title']?>&nbsp;</td></tr>
-		<tr><th>名前</th><td><?=$hash['data']['todo_name']?>&nbsp;</td></tr>
-		<tr><th>期限</th><td><?=$hash['data']['todo_term']?>&nbsp;</td></tr>
-		<?=$completedate?>
-		<tr><th>重要度</th><td><?=$priority[$hash['data']['todo_priority']]?>&nbsp;</td></tr>
-		<tr><th>備考</th><td><?=nl2br($hash['data']['todo_comment'])?>&nbsp;</td></tr>
-		<tr><th>フォルダ</th><td><?=$hash['folder'][$hash['data']['folder_id']]?>&nbsp;</td></tr>
-		<tr><th>表示先</th><td><?=$string?>&nbsp;</td></tr>
-	</table>
-	<div class="submit">
-		<input type="submit" value="　削除　" />&nbsp;
-		<input type="button" value="キャンセル" onclick="location.href='index.php'" />
+
+
+
+<div class="row">
+			<div class="col-lg-12">
+					<div class="panel panel-default">
+							<div class="panel-heading">
+									Basic Form Elements
+							</div>
+							<div class="panel-body">
+									<div class="row">
+											<div class="col-lg-12">
+
+
+
+												<form class="content" method="post" action="">
+													<?=$view->error($hash['error'], '下記のToDoを削除します。')?>
+													<table class="view" cellspacing="0">
+														<tr><th>ステータス</th><td><?=$status?>&nbsp;</td></tr>
+														<tr><th>タイトル</th><td><?=$hash['data']['todo_title']?>&nbsp;</td></tr>
+														<tr><th>名前</th><td><?=$hash['data']['todo_name']?>&nbsp;</td></tr>
+														<tr><th>期限</th><td><?=$hash['data']['todo_term']?>&nbsp;</td></tr>
+														<?=$completedate?>
+														<tr><th>重要度</th><td><?=$priority[$hash['data']['todo_priority']]?>&nbsp;</td></tr>
+														<tr><th>備考</th><td><?=nl2br($hash['data']['todo_comment'])?>&nbsp;</td></tr>
+														<tr><th>フォルダ</th><td><?=$hash['folder'][$hash['data']['folder_id']]?>&nbsp;</td></tr>
+														<tr><th>表示先</th><td><?=$string?>&nbsp;</td></tr>
+													</table>
+													<div class="submit">
+														<input type="submit" value="　削除　" />&nbsp;
+														<input type="button" value="キャンセル" onclick="location.href='index.php'" />
+													</div>
+													<input type="hidden" name="id" value="<?=$hash['data']['id']?>" />
+												</form>
+
+
+
+											</div>
+
+									</div>
+									<!-- /.row (nested) -->
+							</div>
+							<!-- /.panel-body -->
+					</div>
+					<!-- /.panel -->
+			</div>
+			<!-- /.col-lg-12 -->
 	</div>
-	<input type="hidden" name="id" value="<?=$hash['data']['id']?>" />
-</form>
+	<!-- /.row -->
+
+
+
+
+
+
+
+
+
+
+
+
 <?php
 $view->footing();
 ?>
