@@ -1,9 +1,5 @@
 <?php
-/*
- * Copyright(c) 2009 limitlink,Inc. All Rights Reserved.
- * http://limitlink.jp/
- * 文字コード UTF-8
- */
+
 require_once('../application/loader.php');
 $view->heading('フォルダ追加');
 $hash['data']['storage_folder'] = $view->initialize($hash['data']['storage_folder'], intval($_REQUEST['folder']));

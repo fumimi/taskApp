@@ -1,12 +1,5 @@
 <?php
-/**
 
-* @link http://www.fumimi.jp/
-* @package taskApp
-* @subpackage taska
-* @since 0.0.4
-
-*/
 require_once('application/loader.php');
 
 $view->script('general.js');
@@ -132,7 +125,7 @@ $caption = $hash['year'].'年'.$hash['month'].'月'.$hash['day'].'日('.$week[$h
 		<div class="col-lg-6">
 				<div class="panel panel-default">
 						<div class="panel-heading">
-							<i class="fa fa-calendar fa-fw"></i> Task
+							<i class="fa fa-check-square-o fa-fw"></i> Task
 						</div>
 						<!-- /.panel-heading -->
 						<div class="panel-body">
@@ -177,7 +170,8 @@ $caption = $hash['year'].'年'.$hash['month'].'月'.$hash['day'].'日('.$week[$h
 								</table>
 								<p>
 									<a href="todo/add.php" class="btn btn-primary"><i class="fa fa-plus fa-fw"></i> Add</a>
-									<span class="operator btn btn-danger" onclick="App.move('complete')"><i class="fa fa-check  fa-fw"></i> complete</span>
+									<span class="operator btn btn-success" onclick="App.move('complete')"><i class="fa fa-check  fa-fw"></i> Complete</span>
+									<?=$complete?>
 								</p>
 
 							</form>

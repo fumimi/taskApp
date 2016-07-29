@@ -3,6 +3,7 @@
 require_once('../application/loader.php');
 
 $view->heading('Task');
+
 $pagination = new Pagination(array('folder'=>$_GET['folder']));
 
 if (is_array($hash['folder']) && count($hash['folder']) > 0) {
@@ -12,19 +13,29 @@ if (is_array($hash['folder']) && count($hash['folder']) > 0) {
 }
 
 if ($_GET['folder'] == 'complete') {
-	$complete = '<span class="operator" onclick="App.move(\'incomplete\')">未完了</span>';
+	$complete = '<span class="operator btn btn-warning" onclick="App.move(\'incomplete\')">未完了</span>';
 	$current['complete'] = ' class="current"';
 } else {
-	$complete = '<span class="operator" onclick="App.move(\'complete\')">完了</span>';
+	$complete = '<span class="operator btn btn-success" onclick="App.move(\'complete\')"><i class="fa fa-check fa-fw"></i> Complete</span>';
 	if (strlen($_GET['folder']) <= 0) {
 		$current['top'] = ' class="current"';
 	} else {
 		$current[intval($_GET['folder'])] = ' class="current"';
 	}
 }
+
 ?>
 
-
+<style>
+.list-inline li {
+	margin-bottom: 5px;
+}
+@media screen and (max-width: 640px) {
+	.pc {
+		display: none;
+	}
+}
+</style>
 
 <div class="row">
 	<div class="col-lg-12">
@@ -41,36 +52,33 @@ if ($_GET['folder'] == 'complete') {
 			<div class="col-lg-12">
 					<div class="panel panel-default">
 							<div class="panel-heading">
-									Basic Form Elements
+									Task or Folder
 							</div>
 							<div class="panel-body">
 									<div class="row">
 											<div class="col-lg-12">
+												<h3>Task</h3>
 
-
-
-												<div class="foldercaption">Task</div>
-												<ul>
-													<li<?=$current['top']?>><a href="index.php"><i class="fa fa-folder fa-fw"></i> 未完了一覧</a></li>
-													<li<?=$current['complete']?>><a href="index.php?folder=complete"><i class="fa fa-folder fa-fw"></i> 完了一覧</a></li>
+												<!-- <div class="foldercaption">Task</div> -->
+												<ul class="list-inline">
+													<li<?=$current['top']?>><a href="index.php" class="btn btn-default"><i class="fa fa-folder-open-o fa-fw"></i> 未完了一覧</a></li>
+													<li<?=$current['complete']?>><a href="index.php?folder=complete" class="btn btn-default"><i class="fa fa-folder-open-o fa-fw"></i> 完了一覧</a></li>
 												</ul>
 
-												<div class="foldercaption">Folder</div>
+												<h3>Folder</h3>
 
-													<ul>
-														<li<?=$current[0]?>><a href="index.php?folder=0"><i class="fa fa-folder fa-fw"></i> 全般</a></li>
-															<?php
-															if (is_array($hash['folder']) && count($hash['folder']) > 0) {
-																foreach ($hash['folder'] as $key => $value) {
-																	echo sprintf('<li%s><a href="index.php?folder=%s">%s</a></li>', $current[$key], $key, $value);
-																}
-															}
-															?>
+												<ul class="list-inline">
+													<li<?=$current[0]?>><a href="index.php?folder=0" class="btn btn-default"><i class="fa fa-folder-open-o fa-fw"></i> All</a></li>
+													<?php
+													if (is_array($hash['folder']) && count($hash['folder']) > 0) {
+														foreach ($hash['folder'] as $key => $value) {
+															echo sprintf('<li%s><a href="index.php?folder=%s" class="btn btn-default"><i class="fa fa-folder-open-o fa-fw"></i> %s</a></li>', $current[$key], $key, $value);
+														}
+													}
+													?>
 												</ul>
 
-												<div class="folderoperate"><a href="../folder/?type=todo">編集</a></div>
-
-
+												<div class="folderoperate btn btn-default"><a href="../folder/?type=todo">編集</a></div>
 
 											</div>
 
@@ -90,7 +98,7 @@ if ($_GET['folder'] == 'complete') {
 				<div class="col-lg-12">
 						<div class="panel panel-default">
 								<div class="panel-heading">
-										Basic Form Elements
+										Task List
 								</div>
 								<div class="panel-body">
 										<div class="row">
@@ -108,14 +116,14 @@ if ($_GET['folder'] == 'complete') {
 															<tr>
 																<th class="listcheck"><input type="checkbox" value="" onclick="App.checkall(this)" /></th>
 																<th colspan="2"><?=$pagination->sortby('todo_title', 'ToDo')?></th>
-																<th><?=$pagination->sortby('todo_term', '期限')?></th>
+																<th class="pc"><?=$pagination->sortby('todo_term', '期限')?></th>
 																	<?php
 																	if (strlen($_GET['folder']) > 0) {
-																		echo '<th>'.$pagination->sortby('todo_completedate', '完了日').'</th>';
+																		echo '<th class="pc">'.$pagination->sortby('todo_completedate', '完了日').'</th>';
 																	}
 																	?>
-																<th><?=$pagination->sortby('todo_priority', '重要度')?></th>
-																<th><?=$pagination->sortby('folder_id', 'フォルダ')?></th>
+																<th class="pc"><?=$pagination->sortby('todo_priority', '重要度')?></th>
+																<th class="pc"><?=$pagination->sortby('folder_id', 'フォルダ')?></th>
 															</tr>
 															<!-- タイトルエリア　end -->
 
@@ -123,7 +131,7 @@ if ($_GET['folder'] == 'complete') {
 																<?php
 
 																if (is_array($hash['list']) && count($hash['list']) > 0) {
-																	$priority = array('', '<span class="todoimportant">重要</span>', '<span class="todopriority">最重要</span>');
+																	$priority = array('', '<span>重要</span>', '<span>最重要</span>');
 
 																	foreach ($hash['list'] as $row) {
 
@@ -135,9 +143,9 @@ if ($_GET['folder'] == 'complete') {
 																			$classrow = ' class="todocompleterow"';
 																			$completedate = date('Y/m/d H:i', strtotime($row['todo_completedate']));
 																		} elseif (strlen($row['todo_term']) > 0 && date('Ymd', strtotime($row['todo_term'])) < date('Ymd')) {
-																			$string = '<span class="todoimportant">期限超過</span>';
+																			$string = '<span>期限超過</span>';
 																		} else {
-																			$string = '<span class="todoincomplete">未完了</span>';
+																			$string = '<span>未完了</span>';
 																		}
 
 																		if (strlen($row['todo_term']) > 0) {
@@ -158,18 +166,19 @@ if ($_GET['folder'] == 'complete') {
 																		}
 
 																?>
+
 															<tr<?=$classrow?>>
 																<td class="listcheck"><input type="checkbox" name="checkedid[]" value="<?=$row['id']?>" /></td>
-																<td class="todocomplete"><?=$string?>&nbsp;</td>
-																<td class="todo_title"><a<?=$classshare?> href="view.php?id=<?=$row['id']?>"><?=$row['todo_title']?></a>&nbsp;</td>
-																<td class="completedate"><?=$row['todo_term']?>&nbsp;</td>
+																<td class="pc"><?=$string?></td>
+																<td class=""><a<?=$classshare?> href="view.php?id=<?=$row['id']?>"><?=$row['todo_title']?></a></td>
+																<td class="pc"><?=$row['todo_term']?></td>
 																	<?php
 																			if (strlen($_GET['folder']) > 0) {
-																				echo '<td>'.$completedate.'&nbsp;</td>';
+																				echo '<td class="pc">'.$completedate.'</td>';
 																			}
 																	?>
-																<td><?=$priority[$row['todo_priority']]?>&nbsp;</td>
-																<td><?=$hash['folder'][$row['folder_id']]?>&nbsp;</td>
+																<td class="pc"><?=$priority[$row['todo_priority']]?></td>
+																<td class="pc"><?=$hash['folder'][$row['folder_id']]?></td>
 															</tr>
 
 																<?php
@@ -177,7 +186,9 @@ if ($_GET['folder'] == 'complete') {
 																}
 																?>
 														</table>
+
 														<?=$view->pagination($pagination, $hash['count']);?>
+
 														<input type="hidden" name="folder" value="" />
 													</form>
 
@@ -185,32 +196,18 @@ if ($_GET['folder'] == 'complete') {
 
 
 													<ul class="list-inline">
-														<li class="btn btn-default"><a href="add.php">ToDo追加</a></li>
-														<li class="btn btn-default"><?=$complete?></li>
-														<li class="btn btn-default"><span class="operator" onclick="App.move(-1)">削除</span></li>
-														<li><select name="move" onchange="App.move(this)">
+														<li><a href="add.php" class="btn btn-primary"><i class="fa fa-plus fa-fw"></i> Add</a></li>
+														<li><?=$complete?></li>
+														<li><span class="operator btn btn-danger" onclick="App.move(-1)"><i class="fa fa-times fa-fw"></i> Delete</span></li>
+														<li>
+															<select name="move" onchange="App.move(this)" class="form-control">
 															<option value="">フォルダ移動</option>
 															<?=$option?>
 															<option value="0">なし</option></select>
 														</li>
 													</ul>
 
-
-													<div class="form-group input-group">
 														<?=$view->searchform(array('folder'=>$_GET['folder']))?>
-													</div>
-
-
-
-
-
-
-
-
-
-
-
-
 
 												</div>
 

@@ -1,9 +1,5 @@
 <?php
-/*
- * Copyright(c) 2009 limitlink,Inc. All Rights Reserved.
- * http://limitlink.jp/
- * 文字コード UTF-8
- */
+
 require_once('../application/loader.php');
 $view->heading('タイムカード設定');
 $array = array('0'=>'00', '10'=>'10', '20'=>'20', '30'=>'30', '40'=>'40', '50'=>'50');

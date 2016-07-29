@@ -1,9 +1,5 @@
 <?php
-/*
- * Copyright(c) 2009 limitlink,Inc. All Rights Reserved.
- * http://limitlink.jp/
- * 文字コード UTF-8
- */
+
 require_once('../application/loader.php');
 $view->heading('カテゴリ削除', $hash['data']['folder_type']);
 $add = array('許可', '登録者のみ');

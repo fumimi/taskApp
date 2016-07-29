@@ -1,12 +1,4 @@
 <?php
-/**
-
-* @link http://www.fumimi.jp/
-* @package taskApp
-* @subpackage taska
-* @since 0.0.4
-
-*/
 
 require_once('../application/loader.php');
 
@@ -16,21 +8,22 @@ if (is_array($hash['folder']) && count($hash['folder']) > 0) {
 		$option .= '<option value="'.$key.'">'.$value.'</option>';
 	}
 }
-$priority = array('', '<span class="todoimportant">重要</span>', '<span class="todopriority">最重要</span>');
+$priority = array('', '<span class="btn btn-default">重要</span>', '<span class="btn btn-default">最重要</span>');
+
 if ($hash['data']['todo_complete'] == 1) {
-	$status = '<span class="todocomplete">完了</span>';
-	$complete = '<span class="operator" onclick="App.move(\'incomplete\')">未完了</span>';
+	$status = '<span class="btn btn-default">完了</span>';
+	$complete = '<span class="btn btn-default" onclick="App.move(\'incomplete\')">未完了</span>';
 	$redirect = '?folder=complete';
 	if (strlen($hash['data']['todo_completedate']) > 0) {
 		$hash['data']['todo_completedate'] = date('Y年n月j日 G時i分', strtotime($hash['data']['todo_completedate']));
 	}
 	$completedate = '<tr><th>完了日</th><td>'.$hash['data']['todo_completedate'].'&nbsp;</td></tr>';
 } else {
-	$status = '<span class="todoincomplete">未完了</span>';
+	$status = '<span>未完了</span>';
 	if (strlen($hash['data']['todo_term']) > 0 && date('Ymd', strtotime($hash['data']['todo_term'])) < date('Ymd')) {
-		$status .= '&nbsp;<span class="todoimportant">期限超過</span>';
+		$status .= '&nbsp;<span class="btn btn-default">期限超過</span>';
 	}
-	$complete = '<span class="operator" onclick="App.move(\'complete\')">完了</span>';
+	$complete = '<span class="btn btn-default" onclick="App.move(\'complete\')">完了</span>';
 }
 if (strlen($hash['data']['todo_term']) > 0) {
 	$hash['data']['todo_term'] = date('Y年n月j日', strtotime($hash['data']['todo_term']));
@@ -46,12 +39,18 @@ if (strlen($hash['data']['todo_term']) > 0) {
 
 
 
-<ul class="operate">
-	<li><a href="index.php<?=$redirect?>">一覧に戻る</a></li>
+<ul class="list-inline">
+	<li><a href="index.php<?=$redirect?>" class="btn btn-default">一覧に戻る</a></li>
 	<li><?=$complete?></li>
-	<li><a href="edit.php?id=<?=$hash['data']['id']?>">編集</a></li>
-	<li><a href="delete.php?id=<?=$hash['data']['id']?>">削除</a></li>
-	<li><select name="move" onchange="App.move(this)"><option value="">フォルダ移動</option><?=$option?><option value="0">フォルダなし</option></select></li>
+	<li><a href="edit.php?id=<?=$hash['data']['id']?>" class="btn btn-default">編集</a></li>
+	<li><a href="delete.php?id=<?=$hash['data']['id']?>" class="btn btn-default">削除</a></li>
+	<li>
+		<select name="move" onchange="App.move(this)" class="form-control">
+			<option value="">フォルダ移動</option>
+			<?=$option?>
+			<option value="0">フォルダなし</option>
+		</select>
+	</li>
 </ul>
 
 <div class="row">
@@ -66,7 +65,7 @@ if (strlen($hash['data']['todo_term']) > 0) {
 
 
 
-												<table class="view" cellspacing="0">
+												<table class="table table-hover" cellspacing="0">
 													<tr><th>ステータス</th><td><?=$status?>&nbsp;</td></tr>
 													<tr><th>タイトル</th><td><?=$hash['data']['todo_title']?>&nbsp;</td></tr>
 													<tr><th>名前</th><td><?=$hash['data']['todo_name']?>&nbsp;</td></tr>

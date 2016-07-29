@@ -1,9 +1,5 @@
 <?php
-/*
- * Copyright(c) 2009 limitlink,Inc. All Rights Reserved.
- * http://limitlink.jp/
- * 文字コード UTF-8
- */
+
 require_once('../application/loader.php');
 if ($hash['data']['forum_parent'] <= 0) {
 	$redirect = 'view.php?id='.$hash['data']['id'];

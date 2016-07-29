@@ -1,12 +1,4 @@
 <?php
-/**
-
-* @link http://www.fumimi.jp/
-* @package taskApp
-* @subpackage taska
-* @since 0.0.4
-
-*/
 
 require_once('../application/loader.php');
 
@@ -56,6 +48,7 @@ if ($hash['data']['todo_noterm'] == 1) {
 																	<select name="todo_day"<?=$disabled?>><?=$helper->option(1, 31, date('j', $timestamp))?></select>日&nbsp;
 																	<?=$helper->checkbox('todo_noterm', 1, $hash['data']['todo_noterm'], 'todo_noterm', '期限なし', 'onclick="Todo.noterm(this)"')?>
 															</div>
+
 															<div class="form-group">
 																	<label>重要度</label>
 																	<?=$helper->selector('todo_priority', array('', '重要', '最重要'), $hash['data']['todo_priority'])?>

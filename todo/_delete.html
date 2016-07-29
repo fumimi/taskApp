@@ -1,0 +1,581 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="">
+<meta name="author" content="">
+<title>Task App- ver0.0.7Task</title>
+<!-- <link href="../css/default.css" rel="stylesheet" type="text/css" /> -->
+<link href="../css/control.css" rel="stylesheet" type="text/css" />
+<link href="../css/application.css" rel="stylesheet" type="text/css" />
+<link href="../css/style.css" rel="stylesheet" type="text/css" />
+<link rel="shortcut icon" href="../favicon.ico" />
+<script type="text/javascript" src="../js/library/jquery.js"></script>
+<script type="text/javascript" src="../js/library/ui.core.js"></script>
+<script type="text/javascript" src="../js/library/ui.draggable.js"></script>
+<script type="text/javascript" src="../js/application.js"></script>
+<script type="text/javascript" src="../js/todo.js"></script>
+
+<!-- Bootstrap Core CSS -->
+<link href="../bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+
+<!-- MetisMenu CSS -->
+<link href="../bower_components/metisMenu/dist/metisMenu.min.css" rel="stylesheet">
+
+<!-- Custom CSS -->
+<link href="../dist/css/sb-admin-2.css" rel="stylesheet">
+
+<!-- Custom Fonts -->
+<link href="../bower_components/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+
+
+<!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+<![endif]-->
+
+
+<!-- jQuery -->
+<script src="../bower_components/jquery/dist/jquery.min.js"></script>
+
+<!-- Bootstrap Core JavaScript -->
+<script src="../bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+
+<!-- Metis Menu Plugin JavaScript -->
+<script src="../bower_components/metisMenu/dist/metisMenu.min.js"></script>
+
+<!-- Custom Theme JavaScript -->
+<script src="../dist/js/sb-admin-2.js"></script>
+
+
+</head>
+<!-- <div class="header">
+	<div class="headertitle">
+		<a href="../index.php"><img src="../images/title.gif" /></a>
+	</div>
+	<div class="headerright">
+		<a href="../index.php"></a>		<a href="../logout.php">ログアウト</a>
+	</div>
+	<div class="control">
+		<table cellspacing="0"><tr>
+			<td><a href="../index.php">トップ</a></td>
+			<td><a href="../schedule/">スケジュール</a></td>
+			<td><a href="../message/">メッセージ</a></td>
+			<td class="current"><a href="../todo/">ToDo</a></td>
+			<td><a href="../forum/">フォーラム</a></td>
+			<td><a href="../storage/">ファイル</a></td>
+			<td><a href="../bookmark/">ブックマーク</a></td>
+			<td><a href="../project/">プロジェクト</a></td>
+			<td><a href="../addressbook/">アドレス帳</a></td>
+			<td><a href="../member/">メンバー</a></td>
+			<td><a href="../timecard/">タイムカード</a></td>
+		</tr></table>
+	</div>
+</div>
+<div class="container"> -->
+
+
+
+
+<body>
+
+
+<div id="wrapper">
+
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0">
+
+      <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="../index.php">Task App - ver 0.0.7</a>
+      </div>
+      <!-- /.navbar-header -->
+
+
+
+
+
+
+      <ul class="nav navbar-top-links navbar-right">
+        <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#"><i class="fa fa-envelope fa-fw"></i><i class="fa fa-caret-down"></i></a>
+          <ul class="dropdown-menu dropdown-messages">
+            <li><a href="#">
+              <div><strong>John Smith</strong><span class="pull-right text-muted"><em>Yesterday</em></span></div>
+              <div>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque eleifend...</div>
+              </a></li>
+            <li class="divider"></li>
+            <li><a href="#">
+              <div><strong>John Smith</strong><span class="pull-right text-muted"><em>Yesterday</em></span></div>
+              <div>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque eleifend...</div>
+              </a></li>
+            <li class="divider"></li>
+            <li><a href="#">
+              <div><strong>John Smith</strong><span class="pull-right text-muted"><em>Yesterday</em></span></div>
+              <div>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque eleifend...</div>
+              </a></li>
+            <li class="divider"></li>
+            <li><a class="text-center" href="#"><strong>Read All Messages</strong><i class="fa fa-angle-right"></i></a></li>
+          </ul>
+          <!-- /.dropdown-messages -->
+        </li>
+        <!-- /.dropdown -->
+        <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#"><i class="fa fa-tasks fa-fw"></i><i class="fa fa-caret-down"></i></a>
+          <ul class="dropdown-menu dropdown-tasks">
+            <li><a href="#">
+              <div>
+                <p><strong>Project 1</strong><span class="pull-right text-muted">40% Complete</span></p>
+                <div class="progress progress-striped active">
+                  <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width: 40%"><span class="sr-only">40% Complete (success)</span></div>
+                </div>
+              </div>
+              </a></li>
+            <li class="divider"></li>
+            <li><a href="#">
+              <div>
+                <p><strong>Project 2</strong><span class="pull-right text-muted">20% Complete</span></p>
+                <div class="progress progress-striped active">
+                  <div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100" style="width: 20%"><span class="sr-only">20% Complete</span></div>
+                </div>
+              </div>
+              </a></li>
+            <li class="divider"></li>
+            <li><a href="#">
+              <div>
+                <p><strong>Project 3</strong><span class="pull-right text-muted">60% Complete</span></p>
+                <div class="progress progress-striped active">
+                  <div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%"><span class="sr-only">60% Complete (warning)</span></div>
+                </div>
+              </div>
+              </a></li>
+            <li class="divider"></li>
+            <li><a href="#">
+              <div>
+                <p><strong>Project 4</strong><span class="pull-right text-muted">80% Complete</span></p>
+                <div class="progress progress-striped active">
+                  <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" style="width: 80%"><span class="sr-only">80% Complete (danger)</span></div>
+                </div>
+              </div>
+              </a></li>
+            <li class="divider"></li>
+            <li><a class="text-center" href="#"><strong>See All Tasks</strong><i class="fa fa-angle-right"></i></a></li>
+          </ul>
+          <!-- /.dropdown-tasks -->
+        </li>
+        <!-- /.dropdown -->
+        <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#"><i class="fa fa-bell fa-fw"></i><i class="fa fa-caret-down"></i></a>
+          <ul class="dropdown-menu dropdown-alerts">
+            <li><a href="#">
+              <div><i class="fa fa-comment fa-fw"></i>New Comment <span class="pull-right text-muted small">4 minutes ago</span></div>
+              </a></li>
+            <li class="divider"></li>
+            <li><a href="#">
+              <div><i class="fa fa-twitter fa-fw"></i>3 New Followers <span class="pull-right text-muted small">12 minutes ago</span></div>
+              </a></li>
+            <li class="divider"></li>
+            <li><a href="#">
+              <div><i class="fa fa-envelope fa-fw"></i>Message Sent <span class="pull-right text-muted small">4 minutes ago</span></div>
+              </a></li>
+            <li class="divider"></li>
+            <li><a href="#">
+              <div><i class="fa fa-tasks fa-fw"></i>New Task <span class="pull-right text-muted small">4 minutes ago</span></div>
+              </a></li>
+            <li class="divider"></li>
+            <li><a href="#">
+              <div><i class="fa fa-upload fa-fw"></i>Server Rebooted <span class="pull-right text-muted small">4 minutes ago</span></div>
+              </a></li>
+            <li class="divider"></li>
+            <li><a class="text-center" href="#"><strong>See All Alerts</strong><i class="fa fa-angle-right"></i></a></li>
+          </ul>
+          <!-- /.dropdown-alerts -->
+        </li>
+        <!-- /.dropdown -->
+        <li class="dropdown">
+            <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                <i class="fa fa-user fa-fw"></i>  <i class="fa fa-caret-down"></i>
+            </a>
+            <ul class="dropdown-menu dropdown-user">
+                <li><a href="#"><i class="fa fa-user fa-fw"></i> User Profile</a>
+                  <a href="../index.php"></a>
+
+                </li>
+                <li><a href="#"><i class="fa fa-gear fa-fw"></i> Settings</a>
+
+                </li>
+                <li class="divider"></li>
+                <li><a href="../logout.php"><i class="fa fa-sign-out fa-fw"></i> Logout</a>
+                </li>
+            </ul>
+            <!-- /.dropdown-user -->
+        </li>
+        <!-- /.dropdown -->
+      </ul>
+      <!-- /.navbar-top-links -->
+
+
+
+
+
+
+
+
+      <!-- 左ナビ start -->
+      <div class="navbar-default sidebar" role="navigation">
+          <div class="sidebar-nav navbar-collapse">
+              <ul class="nav" id="side-menu">
+                  <li><a href="../index.php"><i class="fa fa-dashboard fa-fw"></i> Dashboard</a></li>
+                  <li><a href="../schedule/"><i class="fa fa-calendar fa-fw"></i> Schedule</a></li>
+                  <li><a href="../message/"><i class="fa fa-envelope-o fa-fw"></i> Message</a></li>
+                  <li><a href="../todo/"><i class="fa fa-check-square-o fa-fw"></i> Task</a></li>
+                  <li><a href="../forum/"><i class="fa fa-comments fa-fw"></i> Comments</a></li>
+                  <li><a href="../storage/"><i class="fa fa-file-text-o fa-fw"></i> Storage</a></li>
+                  <li><a href="../bookmark/"><i class="fa fa-bookmark fa-fw"></i> Bookmark</a></li>
+                  <li><a href="../project/"><i class="fa fa-tasks fa-fw"></i> Project</a></li>
+                  <li><a href="../addressbook/"><i class="fa fa-home fa-fw"></i> Addressbook</a></li>
+                  <li><a href="../member/"><i class="fa fa-users fa-fw"></i> Member</a></li>
+                  <li><a href="../timecard/"><i class="glyphicon glyphicon-time"></i> Timecard</a></li>
+
+
+
+              </ul>
+          </div>
+          <!-- /.sidebar-collapse -->
+      </div>
+      <!-- /.navbar-static-side -->
+
+
+      <!-- 左ナビ end -->
+
+
+    </nav>
+
+    <div id="page-wrapper">
+
+<div class="row">
+	<div class="col-lg-12">
+		<h1 class="page-header">Task List </h1>
+	</div>
+</div>
+
+
+
+
+
+
+<div class="row">
+			<div class="col-lg-12">
+					<div class="panel panel-default">
+							<div class="panel-heading">
+									Task or Folder
+							</div>
+							<div class="panel-body">
+									<div class="row">
+											<div class="col-lg-12">
+												<h3>Task</h3>
+
+												<!-- <div class="foldercaption">Task</div> -->
+												<ul class="list-inline">
+													<li class="current"><a href="index.php" class="btn btn-default"><i class="fa fa-folder-open-o fa-fw"></i> 未完了一覧</a></li>
+													<li><a href="index.php?folder=complete" class="btn btn-default"><i class="fa fa-folder-open-o fa-fw"></i> 完了一覧</a></li>
+												</ul>
+
+												<h3>Folder</h3>
+
+												<ul class="list-inline">
+													<li><a href="index.php?folder=0" class="btn btn-default"><i class="fa fa-folder-open-o fa-fw"></i> All</a></li>
+													<li><a href="index.php?folder=1" class="btn btn-default"><i class="fa fa-folder-open-o fa-fw"></i> 共立女子</a></li><li><a href="index.php?folder=2" class="btn btn-default"><i class="fa fa-folder-open-o fa-fw"></i> ジャングル・ブック</a></li><li><a href="index.php?folder=3" class="btn btn-default"><i class="fa fa-folder-open-o fa-fw"></i> 専修大学ドットコム</a></li><li><a href="index.php?folder=4" class="btn btn-default"><i class="fa fa-folder-open-o fa-fw"></i> 杏林</a></li><li><a href="index.php?folder=5" class="btn btn-default"><i class="fa fa-folder-open-o fa-fw"></i> アロマ</a></li><li><a href="index.php?folder=6" class="btn btn-default"><i class="fa fa-folder-open-o fa-fw"></i> 日臨技</a></li><li><a href="index.php?folder=7" class="btn btn-default"><i class="fa fa-folder-open-o fa-fw"></i> カオリスタ</a></li>												</ul>
+
+												<div class="folderoperate btn btn-default"><a href="../folder/?type=todo">編集</a></div>
+
+											</div>
+
+									</div>
+									<!-- /.row (nested) -->
+							</div>
+							<!-- /.panel-body -->
+					</div>
+					<!-- /.panel -->
+			</div>
+			<!-- /.col-lg-12 -->
+	</div>
+	<!-- /.row -->
+
+
+	<div class="row">
+				<div class="col-lg-12">
+						<div class="panel panel-default">
+								<div class="panel-heading">
+										Basic Form Elements
+								</div>
+								<div class="panel-body">
+										<div class="row">
+												<div class="col-lg-12">
+
+
+
+
+
+
+
+													<form method="post" name="checkedform" action="">
+														<table class="table table-hover" cellspacing="0">
+															<!-- タイトルエリア　start -->
+															<tr>
+																<th class="listcheck"><input type="checkbox" value="" onclick="App.checkall(this)" /></th>
+																<th colspan="2"><li><a href="/taskapp/todo/index.php?page=1&sort=todo_title">ToDo</a></li></th>
+																<th class="pc"><li><a href="/taskapp/todo/index.php?page=1&sort=todo_term">期限</a></li></th>
+																																	<th class="pc"><li><a href="/taskapp/todo/index.php?page=1&sort=todo_priority">重要度</a></li></th>
+																<th class="pc"><li><a href="/taskapp/todo/index.php?page=1&sort=folder_id">フォルダ</a></li></th>
+															</tr>
+															<!-- タイトルエリア　end -->
+
+
+
+															<style>
+															@media screen and (max-width: 640px) {
+																.pc {
+																	display: none;
+																}
+															}
+															</style>
+
+															<tr>
+																<td class="listcheck"><input type="checkbox" name="checkedid[]" value="22" /></td>
+																<td class="pc"><span>未完了</span></td>
+																<td class=""><a href="view.php?id=22">【広告特集】専修大学ドットコム　更新</a></td>
+																<td class="pc">2016/07/29</td>
+																																	<td class="pc"></td>
+																<td class="pc">専修大学ドットコム</td>
+															</tr>
+
+
+															<style>
+															@media screen and (max-width: 640px) {
+																.pc {
+																	display: none;
+																}
+															}
+															</style>
+
+															<tr>
+																<td class="listcheck"><input type="checkbox" name="checkedid[]" value="30" /></td>
+																<td class="pc"><span>未完了</span></td>
+																<td class=""><a href="view.php?id=30">【杏林】図書館リニューアル　最後に連絡する</a></td>
+																<td class="pc">2016/07/29</td>
+																																	<td class="pc"></td>
+																<td class="pc">杏林</td>
+															</tr>
+
+
+															<style>
+															@media screen and (max-width: 640px) {
+																.pc {
+																	display: none;
+																}
+															}
+															</style>
+
+															<tr>
+																<td class="listcheck"><input type="checkbox" name="checkedid[]" value="31" /></td>
+																<td class="pc"><span>未完了</span></td>
+																<td class=""><a href="view.php?id=31">【アロマ】見積もり</a></td>
+																<td class="pc">2016/07/29</td>
+																																	<td class="pc"></td>
+																<td class="pc">アロマ</td>
+															</tr>
+
+
+															<style>
+															@media screen and (max-width: 640px) {
+																.pc {
+																	display: none;
+																}
+															}
+															</style>
+
+															<tr>
+																<td class="listcheck"><input type="checkbox" name="checkedid[]" value="32" /></td>
+																<td class="pc"><span>未完了</span></td>
+																<td class=""><a href="view.php?id=32">【日臨技】見積もり</a></td>
+																<td class="pc">2016/07/29</td>
+																																	<td class="pc"></td>
+																<td class="pc">日臨技</td>
+															</tr>
+
+
+															<style>
+															@media screen and (max-width: 640px) {
+																.pc {
+																	display: none;
+																}
+															}
+															</style>
+
+															<tr>
+																<td class="listcheck"><input type="checkbox" name="checkedid[]" value="33" /></td>
+																<td class="pc"><span>未完了</span></td>
+																<td class=""><a href="view.php?id=33">【共立】見積もり</a></td>
+																<td class="pc">2016/07/29</td>
+																																	<td class="pc"></td>
+																<td class="pc">共立女子</td>
+															</tr>
+
+
+															<style>
+															@media screen and (max-width: 640px) {
+																.pc {
+																	display: none;
+																}
+															}
+															</style>
+
+															<tr>
+																<td class="listcheck"><input type="checkbox" name="checkedid[]" value="34" /></td>
+																<td class="pc"><span>未完了</span></td>
+																<td class=""><a href="view.php?id=34">【カオリスタ】見積もり</a></td>
+																<td class="pc">2016/07/29</td>
+																																	<td class="pc"></td>
+																<td class="pc">カオリスタ</td>
+															</tr>
+
+
+															<style>
+															@media screen and (max-width: 640px) {
+																.pc {
+																	display: none;
+																}
+															}
+															</style>
+
+															<tr>
+																<td class="listcheck"><input type="checkbox" name="checkedid[]" value="35" /></td>
+																<td class="pc"><span>未完了</span></td>
+																<td class=""><a href="view.php?id=35">【共立】英文サイト更新　テストアップ済み</a></td>
+																<td class="pc">2016/07/29</td>
+																																	<td class="pc"></td>
+																<td class="pc">共立女子</td>
+															</tr>
+
+
+															<style>
+															@media screen and (max-width: 640px) {
+																.pc {
+																	display: none;
+																}
+															}
+															</style>
+
+															<tr>
+																<td class="listcheck"><input type="checkbox" name="checkedid[]" value="36" /></td>
+																<td class="pc"><span>未完了</span></td>
+																<td class=""><a href="view.php?id=36">【共立】二中高HP＞TOPパネル更新他　テストアップ済み</a></td>
+																<td class="pc">2016/07/29</td>
+																																	<td class="pc"></td>
+																<td class="pc">共立女子</td>
+															</tr>
+
+
+															<style>
+															@media screen and (max-width: 640px) {
+																.pc {
+																	display: none;
+																}
+															}
+															</style>
+
+															<tr>
+																<td class="listcheck"><input type="checkbox" name="checkedid[]" value="37" /></td>
+																<td class="pc"><span>未完了</span></td>
+																<td class=""><a href="view.php?id=37">【広告特集】ジャングルブック　デザイン初稿提出済み</a></td>
+																<td class="pc">2016/07/29</td>
+																																	<td class="pc"></td>
+																<td class="pc">ジャングル・ブック</td>
+															</tr>
+
+
+															<style>
+															@media screen and (max-width: 640px) {
+																.pc {
+																	display: none;
+																}
+															}
+															</style>
+
+															<tr class="danger">
+																<td class="listcheck"><input type="checkbox" name="checkedid[]" value="20" /></td>
+																<td class="pc"><span>未完了</span></td>
+																<td class=""><a href="view.php?id=20">【杏林】ガイゴ・キャンパスナビ　修正</a></td>
+																<td class="pc">2016/08/01</td>
+																																	<td class="pc"><span>最重要</span></td>
+																<td class="pc">杏林</td>
+															</tr>
+
+																														</table>
+
+
+
+
+<nav aria-label="Page navigation">
+	<ul class="pagination">
+		<li><span aria-hidden="true">&laquo;</span></li><li class="active"><span aria-hidden="true">1</span></li><li><a href="/taskapp/todo/index.php?page=2">2</a></li><li><a href="/taskapp/todo/index.php?page=2"><span aria-hidden="true">&raquo;</span></a></li>&nbsp;
+		表示件数:<select id="limit" class="form-control" name="limit" onchange="App.limit('','','folder=')"><option value="10" selected="selected">10</option><option value="20">20</option><option value="30">30</option><option value="40">40</option><option value="50">50</option><option value="60">60</option><option value="70">70</option><option value="80">80</option><option value="90">90</option><option value="100">100</option></select>
+	</ul>
+</nav>
+
+
+
+														<input type="hidden" name="folder" value="" />
+													</form>
+
+
+
+
+													<ul class="list-inline">
+														<li><a href="add.php" class="btn btn-primary"><i class="fa fa-plus fa-fw"></i> Add</a></li>
+														<li><span class="operator btn btn-success" onclick="App.move('complete')"><i class="fa fa-check fa-fw"></i> Complete</span></li>
+														<li><span class="operator btn btn-danger" onclick="App.move(-1)"><i class="fa fa-times fa-fw"></i> Delete</span></li>
+														<li>
+															<select name="move" onchange="App.move(this)" class="form-control">
+															<option value="">フォルダ移動</option>
+															<option value="1">共立女子</option><option value="2">ジャングル・ブック</option><option value="3">専修大学ドットコム</option><option value="4">杏林</option><option value="5">アロマ</option><option value="6">日臨技</option><option value="7">カオリスタ</option>															<option value="0">なし</option></select>
+														</li>
+													</ul>
+
+														<form method="post" class="searchform" action="/taskapp/todo/index.php"><div class="input-group custom-search-form"><input type="text" name="search" id="search" class="inputsearch form-control" placeholder="Search..." value="" /><span class="input-group-btn"><button class="btn btn-default" type="submit"><i class="fa fa-search"></i></button></span></div></form>
+												</div>
+
+										</div>
+										<!-- /.row (nested) -->
+								</div>
+								<!-- /.panel-body -->
+						</div>
+						<!-- /.panel -->
+				</div>
+				<!-- /.col-lg-12 -->
+		</div>
+		<!-- /.row -->
+
+
+
+
+
+
+<div class="footer">© taskapp.fumimi.jp 2015-2016.</div>
+
+</div>
+
+</div>
+
+
+</body>
+</html>

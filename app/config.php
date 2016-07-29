@@ -7,7 +7,7 @@
 // Application name
 defined('APP_NAME') or define('APP_NAME', 'Task App');
 // Application version
-defined('APP_VERSION') or define('APP_VERSION', '0.0.4');
+defined('APP_VERSION') or define('APP_VERSION', '0.1.0');
 
 
 
@@ -37,18 +37,18 @@ define('APP_IDLE', '3600');
 */
 
 // Application Directory(アプリケーションディレクトリ)
-defined('DIR_PATH') or define('DIR_PATH', dirname(__FILE__).'/');
+defined('DIR_PATH') or define('DIR_PATH', dirname(__FILE__) . '/');
 // Model Directory(モデル)
-define('DIR_MODEL', DIR_PATH.'Model/');
+defined('DIR_MODEL') or define('DIR_MODEL', DIR_PATH . 'Model/');
 // View Directory(ビュー)
-define('DIR_VIEW', DIR_PATH.'View/');
+defined('DIR_VIEW') or define('DIR_VIEW', DIR_PATH.'View/');
 // Controlloer Directory(コントローラー)
-define('DIR_CONR', DIR_PATH.'Controlloer/');
+defined('DIR_CONTROLLER') or define('DIR_CONTROLLER', DIR_PATH.'Controlloer/');
 
 //ライブラリディレクトリ
-define('DIR_LIBRARY', DIR_PATH.'library/');
+define('DIR_LIBRARY', DIR_PATH . 'library/');
 //ファイルディレクトリ
-define('DIR_UPLOAD', DIR_PATH.'upload/');
+define('DIR_UPLOAD', DIR_PATH . 'upload/');
 
 
 /**

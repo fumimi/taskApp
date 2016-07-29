@@ -1,9 +1,5 @@
 <?php
-/*
- * Copyright(c) 2009 limitlink,Inc. All Rights Reserved.
- * http://limitlink.jp/
- * 文字コード UTF-8
- */
+
 require_once('../application/json.php');
 if (is_array($hash['error']) && count($hash['error']) > 0) {
 	echo $view->error($hash['error']);

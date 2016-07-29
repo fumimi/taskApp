@@ -1,9 +1,5 @@
 <?php
-/*
- * Copyright(c) 2009 limitlink,Inc. All Rights Reserved.
- * http://limitlink.jp/
- * 文字コード UTF-8
- */
+
 require_once('../application/loader.php');
 $view->heading('スレッド作成');
 $hash['data']['folder_id'] = $view->initialize($hash['data']['folder_id'], intval($_REQUEST['folder']));

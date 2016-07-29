@@ -1,9 +1,5 @@
 <?php
-/*
- * Copyright(c) 2009 limitlink,Inc. All Rights Reserved.
- * http://limitlink.jp/
- * 文字コード UTF-8
- */
+
 mb_internal_encoding('UTF-8');
 $config = 'application/config.php';
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
