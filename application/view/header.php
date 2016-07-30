@@ -1,12 +1,4 @@
 <?php
-/**
-
-* @link http://www.fumimi.jp/
-* @package taskApp
-* @subpackage taska
-* @since 0.0.4
-
-*/
 ?>
 <!DOCTYPE html>
 <html lang="ja">
@@ -34,6 +26,9 @@
 
 <!-- MetisMenu CSS -->
 <link href="<?=$root?>bower_components/metisMenu/dist/metisMenu.min.css" rel="stylesheet">
+
+<!-- DataTables CSS -->
+<link href="<?=$root?>bower_components/datatables-plugins/integration/bootstrap/3/dataTables.bootstrap.css" rel="stylesheet">
 
 <!-- Custom CSS -->
 <link href="<?=$root?>dist/css/sb-admin-2.css" rel="stylesheet">

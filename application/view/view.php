@@ -92,7 +92,7 @@ class View {
 <nav aria-label="Page navigation">
 	<ul class="pagination">
 		<?=$pagination->create($count)?>&nbsp;
-		表示件数:<?=$pagination->limit($onchange)?>
+		<?=$pagination->limit($onchange)?>
 
 	</ul>
 </nav>
@@ -207,6 +207,69 @@ class View {
 		}
 		return $string;
 
+	}
+
+	/*
+
+	2016.07.30
+
+	パギネーションと表示件数指定を分離
+
+	*/
+
+	function paginationNew($pagination, $count) {
+
+		if (isset($_GET['sort']) && strlen($_GET['sort']) > 0) {
+			$sort = $this->escape($_GET['sort']);
+		}
+		if (isset($_GET['desc']) && strlen($_GET['desc']) > 0) {
+			$desc = intval($_GET['desc']);
+		}
+		if (is_array($pagination->parameter) && count($pagination->parameter) > 0) {
+			foreach ($pagination->parameter as $key => $value) {
+				$array[] = $key.'='.$value;
+			}
+			$onchange = sprintf(' onchange="App.limit(\'%s\',\'%s\',\'%s\')"', $sort, $desc, implode('&', $array));
+		} else {
+			$onchange = sprintf(' onchange="App.limit(\'%s\',\'%s\')"', $sort, $desc);
+		}
+	?>
+
+	<nav aria-label="Page navigation">
+		<ul class="pagination">
+			<?=$pagination->create($count)?>&nbsp;
+		</ul>
+	</nav>
+
+	<?php
+
+	}
+
+	function paginationLimit($pagination, $count) {
+
+		if (isset($_GET['sort']) && strlen($_GET['sort']) > 0) {
+			$sort = $this->escape($_GET['sort']);
+		}
+		if (isset($_GET['desc']) && strlen($_GET['desc']) > 0) {
+			$desc = intval($_GET['desc']);
+		}
+		if (is_array($pagination->parameter) && count($pagination->parameter) > 0) {
+			foreach ($pagination->parameter as $key => $value) {
+				$array[] = $key.'='.$value;
+			}
+			$onchange = sprintf(' onchange="App.limit(\'%s\',\'%s\',\'%s\')"', $sort, $desc, implode('&', $array));
+		} else {
+			$onchange = sprintf(' onchange="App.limit(\'%s\',\'%s\')"', $sort, $desc);
+		}
+	?>
+
+	<nav aria-label="Page navigation">
+		<ul class="pagination">
+			<?=$pagination->limit($onchange)?>
+		</ul>
+	</nav>
+
+	<?php
 	}
 
 }

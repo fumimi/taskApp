@@ -1,29 +1,25 @@
 <?php
-/*
- * Copyright(c) 2009 limitlink,Inc. All Rights Reserved.
- * http://limitlink.jp/
- * 文字コード UTF-8
- */
+
 
 class ApplicationView extends View {
-	
+
 	var $group = array();
 	var $user = array();
 	var $folder = array();
-	
+
 	function ApplicationView($hash = null) {
-	
+
 		if (is_array($hash['group'])) {
 			$this->group = $hash['group'];
 		}
 		if (is_array($hash['user'])) {
 			$this->user = $hash['user'];
 		}
-	
+
 	}
-	
+
 	function permitted($data, $level = 'public') {
-		
+
 		$permission = false;
 		if ($data[$level.'_level'] == 0) {
 			$permission = true;
@@ -33,11 +29,11 @@ class ApplicationView extends View {
 			$permission = true;
 		}
 		return $permission;
-	
+
 	}
-	
+
 	function permit($data, $level = 'public', $option = null, $type = '') {
-		
+
 		if (!is_array($option)) {
 			if ($level == 'public') {
 				$option = array('公開', '非公開', '公開するグループ・ユーザーを設定');
@@ -65,11 +61,11 @@ class ApplicationView extends View {
 <?php
 		echo $this->parse($level, 'group', $data);
 		echo $this->parse($level, 'user', $data);
-		
+
 	}
-	
+
 	function parse($level, $type, $data) {
-		
+
 		if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 			$array = $_POST[$level][$type];
 		} elseif (strlen($data[$level.'_'.$type]) > 0) {
@@ -90,11 +86,11 @@ class ApplicationView extends View {
 			}
 		}
 		return $string;
-	
+
 	}
-	
+
 	function property($data) {
-		
+
 		if ($data['created']) {
 			$created = '&nbsp;('.date('Y/m/d H:i:s', strtotime($data['created'])).')';
 		}
@@ -120,9 +116,9 @@ class ApplicationView extends View {
 		echo $string.'</table>';
 
 	}
-	
+
 	function permitlist($data, $level = 'public') {
-	
+
 		if ($data[$level.'_level'] == 2) {
 			$result = $this->enumerate($data[$level.'_group'], $this->group);
 			if (strlen($result) > 0) {
@@ -133,9 +129,9 @@ class ApplicationView extends View {
 		}
 
 	}
-	
+
 	function enumerate($string, $list, $separator = '&nbsp;') {
-		
+
 		if (strlen($string) > 0 && is_array($list)) {
 			$result = array();
 			$array = explode(',', str_replace(array('][', '[', ']'), array(',', '', ''), $string));
@@ -148,11 +144,11 @@ class ApplicationView extends View {
 			}
 			return implode($separator, $result);
 		}
-		
+
 	}
-	
+
 	function category($folderlist, $type, $url = 'index.php') {
-		
+
 		if ($_GET['folder'] == 'all') {
 			$current['all'] = ' class="current"';
 		} else {
@@ -177,11 +173,11 @@ class ApplicationView extends View {
 			echo '<div class="folderoperate"><a href="../folder/category.php?type='.$type.'">編集</a></div>';
 		}
 		echo '</div>';
-		
+
 	}
-	
+
 	function caption($folderlist, $array = null, $string = '') {
-		
+
 		if (strlen($_GET['folder']) > 0) {
 			if (is_array($folderlist) && strlen($folderlist[$_GET['folder']]) > 0) {
 				$string = ' - '.$folderlist[$_GET['folder']];
@@ -190,22 +186,27 @@ class ApplicationView extends View {
 			}
 		}
 		return $string;
-		
+
 	}
-	
+
 	function searchform($parameter = null) {
-		
+
 		$string = '<form method="post" class="searchform" action="';
 		$string .= $_SERVER['SCRIPT_NAME'].$this->parameter($parameter);
-		$string .= '"><input type="text" name="search" id="search" class="inputsearch" value="';
+		$string .= '"><div class="input-group custom-search-form"><input type="text" name="search" id="search" class="inputsearch form-control" placeholder="Search..." value="';
 		$string .= $this->escape($_REQUEST['search']);
-		$string .= '" /><input type="submit" value="検索" /></form>';
+		// $string .= '" /><input type="submit" value="検索" /></form>';
+		$string .= '" /><span class="input-group-btn"><button class="btn btn-default" type="submit"><i class="fa fa-search"></i></button></span></div></form>';
+
 		return $string;
-		
+
 	}
-	
+
+
+
+
 	function authorize() {
-		
+
 		$authorized = false;
 		$argument = func_get_args();
 		if (is_array($argument) && count($argument) > 0) {
@@ -216,14 +217,14 @@ class ApplicationView extends View {
 			}
 		}
 		return $authorized;
-	
+
 	}
-	
+
 	function explain($type) {
-		
+
 		$explanation = new Explanation;
 		return $explanation->explain($type);
-	
+
 	}
 
 }

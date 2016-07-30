@@ -164,12 +164,15 @@ class Pagination {
 	function limit($attribute = '') {
 
 		$option = array(10=>10,20=>20,30=>30,40=>40,50=>50,60=>60,70=>70,80=>80,90=>90,100=>100);
+
 		if ($_REQUEST['limit'] > 0 && $_REQUEST['limit'] <= $this->maxlimit) {
 			$limit = intval($_REQUEST['limit']);
 		} else {
 			$limit = $this->recordlimit;
 		}
+
 		$string = '';
+
 		foreach ($option as $key => $value) {
 			if ($key == $limit) {
 				$string .= '<option value="'.$key.'" selected="selected">'.$value.'</option>';
@@ -177,9 +180,16 @@ class Pagination {
 				$string .= '<option value="'.$key.'">'.$value.'</option>';
 			}
 		}
-		return '<select id="limit" name="limit"'.$attribute.'>'.$string.'</select>';
+
+		return '<select id="limit" class="form-control" name="limit"' . $attribute . '>' . $string . '</select>';
 
 	}
 
+
+
+
+
 }
+
+
 ?>
