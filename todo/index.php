@@ -116,7 +116,6 @@ if ($_GET['folder'] == 'complete') {
 
 
 
-													<form method="post" name="checkedform" action="">
 
 													<div class="dataTable_wrapper">
 	                          <div id="dataTables-example_wrapper" class="dataTables_wrapper form-inline dt-bootstrap no-footer">
@@ -153,6 +152,7 @@ if ($_GET['folder'] == 'complete') {
 
 														<div class="row">
 
+															<form method="post" name="checkedform" action="">
 
 																<table class="table table-hover" cellspacing="0">
 																	<!-- タイトルエリア　start -->
@@ -229,6 +229,8 @@ if ($_GET['folder'] == 'complete') {
 																		}
 																		?>
 																</table>
+															</form>
+
 
 
 
@@ -274,7 +276,6 @@ if ($_GET['folder'] == 'complete') {
 												</div>
 
 	                      </div>
-											</form>
 
 														<div class="well">
 																<p>以下のボタンをクリックするとタスクを追加することができます。</p>
