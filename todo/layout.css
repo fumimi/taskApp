@@ -1,0 +1,10 @@
+@charset "UTF-8";
+
+.list-inline li {
+	margin-bottom: 5px;
+}
+@media screen and (max-width: 640px) {
+	.pc {
+		display: none;
+	}
+}

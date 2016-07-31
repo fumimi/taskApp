@@ -16,7 +16,7 @@ if ($_GET['folder'] == 'complete') {
 	$complete = '<span class="operator btn btn-warning" onclick="App.move(\'incomplete\')">未完了</span>';
 	$current['complete'] = ' class="current"';
 } else {
-	$complete = '<span class="operator btn btn-success" onclick="App.move(\'complete\')"><i class="fa fa-check fa-fw"></i> Task Complete</span>';
+	$complete = '<span class="operator btn btn-success" onclick="App.move(\'complete\')"><i class="fa fa-check fa-fw"></i> Complete</span>';
 	if (strlen($_GET['folder']) <= 0) {
 		$current['top'] = ' class="current"';
 	} else {
@@ -94,12 +94,6 @@ if ($_GET['folder'] == 'complete') {
 	<!-- /.row -->
 
 
-
-
-
-
-
-
 	<div class="row">
 				<div class="col-lg-12">
 						<div class="panel panel-default">
@@ -116,171 +110,104 @@ if ($_GET['folder'] == 'complete') {
 
 
 
-
-													<div class="dataTable_wrapper">
-	                          <div id="dataTables-example_wrapper" class="dataTables_wrapper form-inline dt-bootstrap no-footer">
-
-															<div class="row">
-																<div class="col-sm-6">
-																	<div class="dataTables_length" id="dataTables-example_length">
-
-																		<?=$view->paginationLimit($pagination, $hash['count']);?>
-
-																		<!-- <label>Show
-																			<select name="dataTables-example_length" aria-controls="dataTables-example" class="form-control input-sm">
-																				<option value="10">10</option>
-																				<option value="25">25</option>
-																				<option value="50">50</option>
-																				<option value="100">100</option>
-																			</select> entries
-																		</label> -->
+													<form method="post" name="checkedform" action="">
+														<table class="table table-hover" cellspacing="0">
+															<!-- タイトルエリア　start -->
+															<tr>
+																<th class="listcheck"><input type="checkbox" value="" onclick="App.checkall(this)" /></th>
+																<th colspan="2"><?=$pagination->sortby('todo_title', 'ToDo')?></th>
+																<th class="pc"><?=$pagination->sortby('todo_term', '期限')?></th>
+																	<?php
+																	if (strlen($_GET['folder']) > 0) {
+																		echo '<th class="pc">'.$pagination->sortby('todo_completedate', '完了日').'</th>';
+																	}
+																	?>
+																<th class="pc"><?=$pagination->sortby('todo_priority', '重要度')?></th>
+																<th class="pc"><?=$pagination->sortby('folder_id', 'フォルダ')?></th>
+															</tr>
+															<!-- タイトルエリア　end -->
 
 
-																</div>
-															</div>
-															<div class="col-sm-6">
-																<div id="dataTables-example_filter" class="dataTables_filter">
-																	<label>Search:
-																		<?=$view->searchform(array('folder'=>$_GET['folder']))?>
+																<?php
 
-																		<!-- <input type="search" class="form-control input-sm" placeholder="" aria-controls="dataTables-example"> -->
-																	</label>
-																</div>
-															</div>
-														</div>
-								            <!-- /.row -->
+																if (is_array($hash['list']) && count($hash['list']) > 0) {
+																	$priority = array('', '<span>重要</span>', '<span>最重要</span>');
 
-														<div class="row">
+																	foreach ($hash['list'] as $row) {
 
-															<form method="post" name="checkedform" action="">
+																		$classrow = '';
+																		$completedate = '';
 
-																<table class="table table-hover" cellspacing="0">
-																	<!-- タイトルエリア　start -->
-																	<tr>
-																		<th class="listcheck"><input type="checkbox" value="" onclick="App.checkall(this)" /></th>
-																		<th colspan="2"><?=$pagination->sortby('todo_title', 'ToDo')?></th>
-																		<th class="pc"><?=$pagination->sortby('todo_term', '期限')?></th>
-																			<?php
-																			if (strlen($_GET['folder']) > 0) {
-																				echo '<th class="pc">'.$pagination->sortby('todo_completedate', '完了日').'</th>';
-																			}
-																			?>
-																		<th class="pc"><?=$pagination->sortby('todo_priority', '重要度')?></th>
-																		<th class="pc"><?=$pagination->sortby('folder_id', 'フォルダ')?></th>
-																	</tr>
-																	<!-- タイトルエリア　end -->
-
-
-																		<?php
-
-																		if (is_array($hash['list']) && count($hash['list']) > 0) {
-																			$priority = array('', '<span>重要</span>', '<span>最重要</span>');
-
-																			foreach ($hash['list'] as $row) {
-
-																				$classrow = '';
-																				$completedate = '';
-
-																				if ($row['todo_complete'] == 1) {
-																					$string = '<span class="todocomplete">完了</span>';
-																					$classrow = ' class="todocompleterow"';
-																					$completedate = date('Y/m/d H:i', strtotime($row['todo_completedate']));
-																				} elseif (strlen($row['todo_term']) > 0 && date('Ymd', strtotime($row['todo_term'])) < date('Ymd')) {
-																					$string = '<span>期限超過</span>';
-																				} else {
-																					$string = '<span>未完了</span>';
-																				}
-
-																				if (strlen($row['todo_term']) > 0) {
-																					$row['todo_term'] = date('Y/m/d', strtotime($row['todo_term']));
-																				}
-
-																				if (strlen($row['todo_user']) > 0) {
-																					$classshare = ' class="share"';
-																				} else {
-																					$classshare = '';
-																				}
-
-																				if($row['todo_priority'] == 1){
-																					$classrow = ' class="warning"';
-																				} else if($row['todo_priority'] == 2){
-																					$classrow = ' class="danger"';
-																				} else {
-																				}
-
-																		?>
-
-																	<tr<?=$classrow?>>
-																		<td class="listcheck"><input type="checkbox" name="checkedid[]" value="<?=$row['id']?>" /></td>
-																		<td class="pc"><?=$string?></td>
-																		<td class=""><a<?=$classshare?> href="view.php?id=<?=$row['id']?>"><?=$row['todo_title']?></a></td>
-																		<td class="pc"><?=$row['todo_term']?></td>
-																			<?php
-																					if (strlen($_GET['folder']) > 0) {
-																						echo '<td class="pc">'.$completedate.'</td>';
-																					}
-																			?>
-																		<td class="pc"><?=$priority[$row['todo_priority']]?></td>
-																		<td class="pc"><?=$hash['folder'][$row['folder_id']]?></td>
-																	</tr>
-
-																		<?php
-																			}
+																		if ($row['todo_complete'] == 1) {
+																			$string = '<span class="todocomplete">完了</span>';
+																			$classrow = ' class="todocompleterow"';
+																			$completedate = date('Y/m/d H:i', strtotime($row['todo_completedate']));
+																		} elseif (strlen($row['todo_term']) > 0 && date('Ymd', strtotime($row['todo_term'])) < date('Ymd')) {
+																			$string = '<span>期限超過</span>';
+																		} else {
+																			$string = '<span>未完了</span>';
 																		}
-																		?>
-																</table>
-															</form>
+
+																		if (strlen($row['todo_term']) > 0) {
+																			$row['todo_term'] = date('Y/m/d', strtotime($row['todo_term']));
+																		}
+
+																		if (strlen($row['todo_user']) > 0) {
+																			$classshare = ' class="share"';
+																		} else {
+																			$classshare = '';
+																		}
+
+																		if($row['todo_priority'] == 1){
+																			$classrow = ' class="warning"';
+																		} else if($row['todo_priority'] == 2){
+																			$classrow = ' class="danger"';
+																		} else {
+																		}
+
+																?>
+
+															<tr<?=$classrow?>>
+																<td class="listcheck"><input type="checkbox" name="checkedid[]" value="<?=$row['id']?>" /></td>
+																<td class="pc"><?=$string?></td>
+																<td class=""><a<?=$classshare?> href="view.php?id=<?=$row['id']?>"><?=$row['todo_title']?></a></td>
+																<td class="pc"><?=$row['todo_term']?></td>
+																	<?php
+																			if (strlen($_GET['folder']) > 0) {
+																				echo '<td class="pc">'.$completedate.'</td>';
+																			}
+																	?>
+																<td class="pc"><?=$priority[$row['todo_priority']]?></td>
+																<td class="pc"><?=$hash['folder'][$row['folder_id']]?></td>
+															</tr>
+
+																<?php
+																	}
+																}
+																?>
+														</table>
+
+														<?=$view->pagination($pagination, $hash['count']);?>
+
+														<input type="hidden" name="folder" value="" />
+													</form>
 
 
 
 
+													<ul class="list-inline">
+														<li><a href="add.php" class="btn btn-primary"><i class="fa fa-plus fa-fw"></i> Add</a></li>
+														<li><?=$complete?></li>
+														<li><span class="operator btn btn-danger" onclick="App.move(-1)"><i class="fa fa-times fa-fw"></i> Delete</span></li>
+														<li>
+															<select name="move" onchange="App.move(this)" class="form-control">
+															<option value="">フォルダ移動</option>
+															<?=$option?>
+															<option value="0">なし</option></select>
+														</li>
+													</ul>
 
-
-
-
-														</div>
-								            <!-- /.row -->
-
-
-
-
-													<div class="row">
-														<div class="col-sm-6">
-															<div class="dataTables_info" id="dataTables-example_info" role="status" aria-live="polite">
-																<ul class="list-inline">
-																	<li><?=$complete?></li>
-																	<li><span class="operator btn btn-danger" onclick="App.move(-1)"><i class="fa fa-times fa-fw"></i>Task Delete</span></li>
-																	<li>
-																		<select name="move" onchange="App.move(this)" class="form-control">
-																		<option value="">フォルダ移動</option>
-																		<?=$option?>
-																		<option value="0">なし</option></select>
-																	</li>
-																</ul>
-
-															</div>
-														</div>
-														<div class="col-sm-6">
-															<div class="dataTables_paginate paging_simple_numbers" id="dataTables-example_paginate">
-
-
-																<?=$view->paginationNew($pagination, $hash['count']);?>
-
-																</ul>
-															</div>
-														</div>
-													</div>
-							            <!-- /.row -->
-
-
-												</div>
-
-	                      </div>
-
-														<div class="well">
-																<p>以下のボタンをクリックするとタスクを追加することができます。</p>
-																<a href="add.php" class="btn btn-primary btn-lg btn-block"><i class="fa fa-plus fa-fw"></i> Task Add</a>
-														</div>
+														<?=$view->searchform(array('folder'=>$_GET['folder']))?>
 
 												</div>
 

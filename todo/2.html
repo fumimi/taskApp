@@ -52,12 +52,17 @@
 
 <!-- Custom Theme JavaScript -->
 <script src="../dist/js/sb-admin-2.js"></script>
+
 <style>
 #page-wrapper {
+  font-size: 13px;
+}
+.folder-btn .btn {
   font-size: 11px;
 }
-
 </style>
+
+
 </head>
 <!-- <div class="header">
 	<div class="headertitle">
@@ -237,23 +242,97 @@
 </style>
     <div class="row">
       <div class="col-lg-12">
-        <h1 class="page-header">Task List </h1>
+        <h1 class="page-header">Task List</h1>
       </div>
     </div>
+
+
+
+
+
+
+
+
+
     <div class="row">
-
-
-
-
-
-
-      <div class="col-lg-10">
+      <div class="col-lg-12">
         <div class="panel panel-default">
-          <div class="panel-heading"> Task List </div>
+          <div class="panel-heading">Task List</div>
           <div class="panel-body">
             <div class="row">
               <div class="col-lg-12">
-                <form method="post" name="checkedform" action="">
+
+                <div class="row">
+                  <div class="col-lg-12">
+
+                    <ul class="list-inline folder-btn">
+                      <li class="current"><a href="index.php" class="btn btn-default"><i class="fa fa-folder-open-o fa-fw"></i> 未完了一覧</a></li>
+                      <li><a href="index.php?folder=complete" class="btn btn-default"><i class="fa fa-folder-open-o fa-fw"></i> 完了一覧</a></li>
+                    </ul>
+                    <!-- <h3>Folder</h3> -->
+                    <ul class="list-inline folder-btn">
+                      <li><a href="index.php?folder=0" class="btn btn-default"><i class="fa fa-folder-open-o fa-fw"></i> All</a></li>
+                      <li><a href="index.php?folder=1" class="btn btn-default"><i class="fa fa-folder-open-o fa-fw"></i> 共立女子</a></li>
+                      <li><a href="index.php?folder=2" class="btn btn-default"><i class="fa fa-folder-open-o fa-fw"></i> ジャングル・ブック</a></li>
+                      <li><a href="index.php?folder=3" class="btn btn-default"><i class="fa fa-folder-open-o fa-fw"></i> 専修大学ドットコム</a></li>
+                      <li><a href="index.php?folder=4" class="btn btn-default"><i class="fa fa-folder-open-o fa-fw"></i> 杏林</a></li>
+                      <li><a href="index.php?folder=5" class="btn btn-default"><i class="fa fa-folder-open-o fa-fw"></i> アロマ</a></li>
+                      <li><a href="index.php?folder=6" class="btn btn-default"><i class="fa fa-folder-open-o fa-fw"></i> 日臨技</a></li>
+                      <li><a href="index.php?folder=7" class="btn btn-default"><i class="fa fa-folder-open-o fa-fw"></i> カオリスタ</a></li>
+                      <li><a href="index.php?folder=8" class="btn btn-default"><i class="fa fa-folder-open-o fa-fw"></i> ドリー</a></li>
+                      <li><a href="index.php?folder=9" class="btn btn-default"><i class="fa fa-folder-open-o fa-fw"></i> 立教</a></li>
+                      <li><a href="index.php?folder=10" class="btn btn-default"><i class="fa fa-folder-open-o fa-fw"></i> 公開講座</a></li>
+                      <li><a href="index.php?folder=11" class="btn btn-default"><i class="fa fa-folder-open-o fa-fw"></i> NIE</a></li>
+                    </ul>
+                    <div class="folderoperate btn btn-default"><a href="../folder/?type=todo">編集</a></div>
+
+                  </div>
+                </div>
+
+
+
+
+
+
+
+
+
+                <div class="row">
+                  <div class="col-lg-6">
+
+                    <select id="limit" class="form-control" name="limit" onchange="App.limit('','','folder=')">
+                      <option value="10" selected="selected">10</option>
+                      <option value="20">20</option>
+                      <option value="30">30</option>
+                      <option value="40">40</option>
+                      <option value="50">50</option>
+                      <option value="60">60</option>
+                      <option value="70">70</option>
+                      <option value="80">80</option>
+                      <option value="90">90</option>
+                      <option value="100">100</option>
+                    </select>
+
+                  </div>
+                  <!-- /.col-lg-6 -->
+                  <div class="col-lg-6">
+
+                    <form method="post" class="searchform" action="/taskapp/todo/index.php">
+                      <div class="input-group custom-search-form">
+                        <input type="text" name="search" id="search" class="inputsearch form-control" placeholder="Search..." value="" />
+                        <span class="input-group-btn">
+                        <button class="btn btn-default" type="submit"><i class="fa fa-search"></i></button>
+                        </span></div>
+                    </form>
+
+                  </div>
+                  <!-- /.col-lg-6 -->
+              </div>
+
+
+              <div class="row">
+                <div class="col-lg-12">
+
                   <table class="table table-hover" cellspacing="0">
                     <!-- タイトルエリア　start -->
                     <tr>
@@ -346,57 +425,66 @@
                       <td class="pc"></td>
                     </tr>
                   </table>
-                  <nav aria-label="Page navigation">
-                    <ul class="pagination">
-                      <li><span aria-hidden="true">&laquo;</span></li>
-                      <li class="active"><span aria-hidden="true">1</span></li>
-                      <li><span aria-hidden="true">&raquo;</span></li>
-                      &nbsp;
-                      <select id="limit" class="form-control" name="limit" onchange="App.limit('','','folder=')">
-                        <option value="10" selected="selected">10</option>
-                        <option value="20">20</option>
-                        <option value="30">30</option>
-                        <option value="40">40</option>
-                        <option value="50">50</option>
-                        <option value="60">60</option>
-                        <option value="70">70</option>
-                        <option value="80">80</option>
-                        <option value="90">90</option>
-                        <option value="100">100</option>
-                      </select>
+
+
+                </div>
+              </div>
+
+
+
+                <div class="row">
+                  <div class="col-lg-6">
+
+
+                    <nav aria-label="Page navigation">
+                      <ul class="pagination">
+                        <li><span aria-hidden="true">&laquo;</span></li>
+                        <li class="active"><span aria-hidden="true">1</span></li>
+                        <li><span aria-hidden="true">&raquo;</span></li>
+                      </ul>
+                    </nav>
+                    <input type="hidden" name="folder" value="" />
+
+
+                  </div>
+                  <!-- /.col-lg-6 -->
+                  <div class="col-lg-6">
+
+                    <ul class="list-inline">
+                      <li><span class="operator btn btn-success" onclick="App.move('complete')"><i class="fa fa-check fa-fw"></i> Task Complete</span></li>
+                      <li><span class="operator btn btn-danger" onclick="App.move(-1)"><i class="fa fa-times fa-fw"></i> Task Delete</span></li>
+                      <li>
+                        <select name="move" onchange="App.move(this)" class="form-control">
+                          <option value="">フォルダ移動</option>
+                          <option value="1">共立女子</option>
+                          <option value="2">ジャングル・ブック</option>
+                          <option value="3">専修大学ドットコム</option>
+                          <option value="4">杏林</option>
+                          <option value="5">アロマ</option>
+                          <option value="6">日臨技</option>
+                          <option value="7">カオリスタ</option>
+                          <option value="8">ファインディング・ドリー</option>
+                          <option value="9">立教</option>
+                          <option value="10">公開講座</option>
+                          <option value="11">NIE</option>
+                          <option value="0">なし</option>
+                        </select>
+                      </li>
                     </ul>
-                  </nav>
-                  <input type="hidden" name="folder" value="" />
-                </form>
-                <ul class="list-inline">
-                  <li><a href="add.php" class="btn btn-primary"><i class="fa fa-plus fa-fw"></i> Add</a></li>
-                  <li><span class="operator btn btn-success" onclick="App.move('complete')"><i class="fa fa-check fa-fw"></i> Complete</span></li>
-                  <li><span class="operator btn btn-danger" onclick="App.move(-1)"><i class="fa fa-times fa-fw"></i> Delete</span></li>
-                  <li>
-                    <select name="move" onchange="App.move(this)" class="form-control">
-                      <option value="">フォルダ移動</option>
-                      <option value="1">共立女子</option>
-                      <option value="2">ジャングル・ブック</option>
-                      <option value="3">専修大学ドットコム</option>
-                      <option value="4">杏林</option>
-                      <option value="5">アロマ</option>
-                      <option value="6">日臨技</option>
-                      <option value="7">カオリスタ</option>
-                      <option value="8">ファインディング・ドリー</option>
-                      <option value="9">立教</option>
-                      <option value="10">公開講座</option>
-                      <option value="11">NIE</option>
-                      <option value="0">なし</option>
-                    </select>
-                  </li>
-                </ul>
-                <form method="post" class="searchform" action="/taskapp/todo/index.php">
-                  <div class="input-group custom-search-form">
-                    <input type="text" name="search" id="search" class="inputsearch form-control" placeholder="Search..." value="" />
-                    <span class="input-group-btn">
-                    <button class="btn btn-default" type="submit"><i class="fa fa-search"></i></button>
-                    </span></div>
-                </form>
+
+                  </div>
+                  <!-- /.col-lg-6 -->
+              </div>
+
+                <div class="well">
+                  <h4>新しいタスクを追加する</h4>
+                  <p>チャット画面の右側にある「タスク」の入力欄からタスクの内容を入力して、担当者と期日を設定し、[タスクを追加]ボタンでタスクを追加することができます。<br>
+                    担当者を設定するには、[ + ]ボタンをクリックすると、グループチャットに参加しているメンバーの一覧が表示されますので、担当者を選択します。同時に複数人にタスクを追加することもでき、「すべて」から全員に追加も可能です。
+                    期日を設定するには、「カレンダー」アイコンをクリックすると、カレンダーが表示されますので、指定したい期日をクリックして設定します。なお、初期設定は本日の期日が設定されていますのでご注意ください。
+                    担当者・期日を誤って設定してしまった場合は、表示されている「X」マークをクリックして設定を解除することができます。</p>
+                  <p><a href="add.php" class="btn btn-primary btn-lg btn-block"><i class="fa fa-plus fa-fw"></i> Task Add</a></p>
+                </div>
+
               </div>
             </div>
             <!-- /.row (nested) -->
@@ -406,50 +494,6 @@
         <!-- /.panel -->
       </div>
       <!-- /.col-lg-12 -->
-
-
-      <div class="col-lg-2">
-        <div class="panel panel-default">
-          <div class="panel-heading"> Task or Folder </div>
-          <div class="panel-body">
-            <div class="row">
-              <div class="col-lg-12">
-                <h3>Task</h3>
-
-                <!-- <div class="foldercaption">Task</div> -->
-                <ul class="list-inline">
-                  <li class="current"><a href="index.php" class="btn btn-default"><i class="fa fa-folder-open-o fa-fw"></i> 未完了一覧</a></li>
-                  <li><a href="index.php?folder=complete" class="btn btn-default"><i class="fa fa-folder-open-o fa-fw"></i> 完了一覧</a></li>
-                </ul>
-                <h3>Folder</h3>
-                <ul>
-                  <li><a href="index.php?folder=0">All</a></li>
-                  <li><a href="index.php?folder=1">共立女子</a></li>
-                  <li><a href="index.php?folder=2">ジャングル・ブック</a></li>
-                  <li><a href="index.php?folder=3">専修大学ドットコム</a></li>
-                  <li><a href="index.php?folder=4">杏林</a></li>
-                  <li><a href="index.php?folder=5">アロマ</a></li>
-                  <li><a href="index.php?folder=6">日臨技</a></li>
-                  <li><a href="index.php?folder=7">カオリスタ</a></li>
-                  <li><a href="index.php?folder=8">ファインディング・ドリー</a></li>
-                  <li><a href="index.php?folder=9">立教</a></li>
-                  <li><a href="index.php?folder=10">公開講座</a></li>
-                  <li><a href="index.php?folder=11">NIE</a></li>
-                </ul>
-                <div class="folderoperate btn btn-default"><a href="../folder/?type=todo">編集</a></div>
-              </div>
-            </div>
-            <!-- /.row (nested) -->
-          </div>
-          <!-- /.panel-body -->
-        </div>
-        <!-- /.panel -->
-      </div>
-      <!-- /.col-lg-12 -->
-
-
-
-
     </div>
     <!-- /.row -->
 

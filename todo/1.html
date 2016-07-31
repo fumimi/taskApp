@@ -52,12 +52,17 @@
 
 <!-- Custom Theme JavaScript -->
 <script src="../dist/js/sb-admin-2.js"></script>
+
 <style>
 #page-wrapper {
+  font-size: 13px;
+}
+.folder-btn {
   font-size: 11px;
 }
-
 </style>
+
+
 </head>
 <!-- <div class="header">
 	<div class="headertitle">
@@ -240,14 +245,38 @@
         <h1 class="page-header">Task List </h1>
       </div>
     </div>
+
+    <p><a href="add.php" class="btn btn-primary btn-lg btn-block"><i class="fa fa-plus fa-fw"></i> Task Add</a></p>
+
+
+
+
+    <ul class="list-inline">
+      <li class="current"><a href="index.php" class="btn btn-default"><i class="fa fa-folder-open-o fa-fw"></i> 未完了一覧</a></li>
+      <li><a href="index.php?folder=complete" class="btn btn-default"><i class="fa fa-folder-open-o fa-fw"></i> 完了一覧</a></li>
+    </ul>
+    <h3>Folder</h3>
+    <ul class="list-inline folder-btn">
+      <li><a href="index.php?folder=0" class="btn btn-default"><i class="fa fa-folder-open-o fa-fw"></i> All</a></li>
+      <li><a href="index.php?folder=1" class="btn btn-default"><i class="fa fa-folder-open-o fa-fw"></i> 共立女子</a></li>
+      <li><a href="index.php?folder=2" class="btn btn-default"><i class="fa fa-folder-open-o fa-fw"></i> ジャングル・ブック</a></li>
+      <li><a href="index.php?folder=3" class="btn btn-default"><i class="fa fa-folder-open-o fa-fw"></i> 専修大学ドットコム</a></li>
+      <li><a href="index.php?folder=4" class="btn btn-default"><i class="fa fa-folder-open-o fa-fw"></i> 杏林</a></li>
+      <li><a href="index.php?folder=5" class="btn btn-default"><i class="fa fa-folder-open-o fa-fw"></i> アロマ</a></li>
+      <li><a href="index.php?folder=6" class="btn btn-default"><i class="fa fa-folder-open-o fa-fw"></i> 日臨技</a></li>
+      <li><a href="index.php?folder=7" class="btn btn-default"><i class="fa fa-folder-open-o fa-fw"></i> カオリスタ</a></li>
+      <li><a href="index.php?folder=8" class="btn btn-default"><i class="fa fa-folder-open-o fa-fw"></i> ドリー</a></li>
+      <li><a href="index.php?folder=9" class="btn btn-default"><i class="fa fa-folder-open-o fa-fw"></i> 立教</a></li>
+      <li><a href="index.php?folder=10" class="btn btn-default"><i class="fa fa-folder-open-o fa-fw"></i> 公開講座</a></li>
+      <li><a href="index.php?folder=11" class="btn btn-default"><i class="fa fa-folder-open-o fa-fw"></i> NIE</a></li>
+    </ul>
+    <div class="folderoperate btn btn-default"><a href="../folder/?type=todo">編集</a></div>
+
+
+
+
     <div class="row">
-
-
-
-
-
-
-      <div class="col-lg-10">
+      <div class="col-lg-12">
         <div class="panel panel-default">
           <div class="panel-heading"> Task List </div>
           <div class="panel-body">
@@ -369,9 +398,8 @@
                   <input type="hidden" name="folder" value="" />
                 </form>
                 <ul class="list-inline">
-                  <li><a href="add.php" class="btn btn-primary"><i class="fa fa-plus fa-fw"></i> Add</a></li>
-                  <li><span class="operator btn btn-success" onclick="App.move('complete')"><i class="fa fa-check fa-fw"></i> Complete</span></li>
-                  <li><span class="operator btn btn-danger" onclick="App.move(-1)"><i class="fa fa-times fa-fw"></i> Delete</span></li>
+                  <li><span class="operator btn btn-success" onclick="App.move('complete')"><i class="fa fa-check fa-fw"></i> Task Complete</span></li>
+                  <li><span class="operator btn btn-danger" onclick="App.move(-1)"><i class="fa fa-times fa-fw"></i> Task Delete</span></li>
                   <li>
                     <select name="move" onchange="App.move(this)" class="form-control">
                       <option value="">フォルダ移動</option>
@@ -406,50 +434,6 @@
         <!-- /.panel -->
       </div>
       <!-- /.col-lg-12 -->
-
-
-      <div class="col-lg-2">
-        <div class="panel panel-default">
-          <div class="panel-heading"> Task or Folder </div>
-          <div class="panel-body">
-            <div class="row">
-              <div class="col-lg-12">
-                <h3>Task</h3>
-
-                <!-- <div class="foldercaption">Task</div> -->
-                <ul class="list-inline">
-                  <li class="current"><a href="index.php" class="btn btn-default"><i class="fa fa-folder-open-o fa-fw"></i> 未完了一覧</a></li>
-                  <li><a href="index.php?folder=complete" class="btn btn-default"><i class="fa fa-folder-open-o fa-fw"></i> 完了一覧</a></li>
-                </ul>
-                <h3>Folder</h3>
-                <ul>
-                  <li><a href="index.php?folder=0">All</a></li>
-                  <li><a href="index.php?folder=1">共立女子</a></li>
-                  <li><a href="index.php?folder=2">ジャングル・ブック</a></li>
-                  <li><a href="index.php?folder=3">専修大学ドットコム</a></li>
-                  <li><a href="index.php?folder=4">杏林</a></li>
-                  <li><a href="index.php?folder=5">アロマ</a></li>
-                  <li><a href="index.php?folder=6">日臨技</a></li>
-                  <li><a href="index.php?folder=7">カオリスタ</a></li>
-                  <li><a href="index.php?folder=8">ファインディング・ドリー</a></li>
-                  <li><a href="index.php?folder=9">立教</a></li>
-                  <li><a href="index.php?folder=10">公開講座</a></li>
-                  <li><a href="index.php?folder=11">NIE</a></li>
-                </ul>
-                <div class="folderoperate btn btn-default"><a href="../folder/?type=todo">編集</a></div>
-              </div>
-            </div>
-            <!-- /.row (nested) -->
-          </div>
-          <!-- /.panel-body -->
-        </div>
-        <!-- /.panel -->
-      </div>
-      <!-- /.col-lg-12 -->
-
-
-
-
     </div>
     <!-- /.row -->
 
